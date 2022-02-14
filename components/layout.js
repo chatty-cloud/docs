@@ -1,20 +1,29 @@
+import { Box, Flex } from '@chakra-ui/react'
 import Header from '../components/Header'
 import Navigation from '../components/Navigation'
 
 export default function Layout({ children }) {
   return (
-    <div className='h-full'>
-      <div className='flex flex-col mx-auto bg-primary text-primary'>
+    <Box h={'full'}>
+      <Flex mx={'auto'} flexDirection={'column'}>
         <Header />
-        <main className='flex flex-col flex-1 w-full px-3 py-4 mx-auto bg-primary md:py-8 max-w-7xl sm:px-6 lg:px-8'>
-          <div className='flex flex-col h-full md:flex-row'>
-            <div className='flex-shrink-0 hidden w-full md:block md:w-1/3 md:pr-4 lg:pr-8 xl:pr-12'>
+        <Flex
+          flex={1}
+          flexDirection={'column'}
+          w={'full'}
+          mx={'auto'}
+          maxW={'7xl'}
+          px={8}
+          py={4}
+        >
+          <Flex flexDirection={{ base: 'column', md: 'row' }} h={'full'}>
+            <Box flexShrink={0} display={{ base: 'none', md: 'block' }} pr={{ base: 0, md: 12 }}>
               <Navigation />
-            </div>
-            <div className='relative flex-1 min-w-0'>{children}</div>
-          </div>
-        </main>
-      </div>
-    </div>
+            </Box>
+            <Box flex={1} minW={0}>{children}</Box>
+          </Flex>
+        </Flex>
+      </Flex>
+    </Box>
   )
 }

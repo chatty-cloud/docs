@@ -31,7 +31,7 @@ export default class Document extends NextDocument {
         <Head>
           <meta content='IE=edge' httpEquiv='X-UA-Compatible' />
           <meta content='#262626' name='theme-color' />
-          <link rel='mask-icon' href='/favicon.svg' color='#262626' />
+          <link rel='shortcut icon' href='/favicon.svg' />
           <script dangerouslySetInnerHTML={{ __html: this.renderSnippet() }} />
         </Head>
         <body>

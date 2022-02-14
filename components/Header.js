@@ -9,10 +9,13 @@ import HamburgerMenu from './HamburgerMenu'
 import Logo from './Logo'
 import Navigation from './Navigation'
 import SearchBar from './Searchbar'
+import { Box, Text, useColorModeValue } from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 
 export default function Header() {
   const [isSignedIn, setSignedInState] = useState(false)
   const [showMobileNav, setShowMobileNav] = useState(false)
+  const borderColor = useColorModeValue('gray.400', 'gray.600')
 
   function toggleMobileNav() {
     setShowMobileNav((s) => !s)
@@ -26,13 +29,14 @@ export default function Header() {
 
   return (
     <>
-      <a
+      {/* <a
         href='#content'
         className='absolute z-50 px-2 py-1 border-b border-r rounded-br -ml-96 focus:ml-0 bg-secondary'
       >
         Skip to content
-      </a>
-      <div className='relative z-40 w-full py-3 mx-auto border-b bg-primary text-primary'>
+      </a> */}
+      <Box zIndex={40} w={'full'} py={4} mx={'auto'} borderBottomWidth={1} borderBottomColor={borderColor}>
+
         {/* Overlay */}
         <div
           className={classNames('md:hidden duration-300 fixed z-30 inset-0 transition-opacity', {
@@ -48,12 +52,14 @@ export default function Header() {
           <div className='flex items-center col-start-1 row-start-1'>
             <Link href='https://chatty-cloud.com'>
               <a className='rounded text-primary' aria-label='Go to documentation homepage'>
-                <Logo />
+                {/* <Logo /> */}
+                <Logo size={'xs'} color={useColorModeValue('#111111', '#EFEFEF')} />
               </a>
             </Link>
             <div className='flex items-center lg:text-lg font-medium pl-1.5'>
               <Link href='/'>
-                <a className='text-primary'>Documentation</a>
+                {/* <a className='text-primary'>Documentation</a> */}
+                <Text>Documentation</Text>
               </Link>
             </div>
           </div>
@@ -89,7 +95,8 @@ export default function Header() {
               className='flex appearance-none focus:outline-none'
               onClick={toggleMobileNav}
             >
-              <HamburgerMenu open={showMobileNav} />
+              <HamburgerIcon w={6} h={6} />
+              {/* <HamburgerMenu open={showMobileNav} /> */}
             </button>
           </div>
         </header>
@@ -100,7 +107,9 @@ export default function Header() {
         >
           <Navigation />
         </div>
-      </div>
+      </Box>
+      {/* <div className='relative z-40 w-full py-3 mx-auto border-b bg-primary text-primary'>
+      </div> */}
     </>
   )
 }

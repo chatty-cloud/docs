@@ -1,11 +1,12 @@
 import '../styles/index.css'
 import { useEffect, useState } from 'react'
 
-import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 import Page from '../components/SegmentPageTracker'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools'
 
 export function App({ Component, pageProps }) {
   const router = useRouter()
@@ -55,16 +56,33 @@ export function App({ Component, pageProps }) {
     }
   }, [])
 
+  const styles = {
+    global: (props) => ({
+      body: {
+        color: mode('gray.800', 'gray.100')(props),
+        bg: mode('white', 'gray.900')(props),
+      },
+    }),
+  };
+
+  const config = {
+    initialColorMode: 'dark',
+    useSystemColorMode: true,
+  }
+
+
+
+  const theme = extendTheme({
+    styles,
+    config
+  });
+
   return (
-    <ThemeProvider defaultTheme='dark' attribute='class'>
-      <Head>
-        <link rel='shortcut icon' href={favicon} sizes='any' type='image/svg+xml' />
-        <link rel='preload' href='https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css' as='style' />
-      </Head>
+    <ChakraProvider theme={theme}>
       <Page>
         <Component {...pageProps} />
       </Page>
-    </ThemeProvider>
+    </ChakraProvider>
   )
 }
 
