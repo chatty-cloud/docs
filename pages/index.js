@@ -72,7 +72,7 @@ export default function Overview() {
             <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
               Learn more
             </Button>
-            <Box>
+            <Box display={{ base: 'none', md: 'block' }}>
               <Icon
                 as={Arrow}
                 color={useColorModeValue('gray.800', 'gray.300')}
