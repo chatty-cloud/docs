@@ -4,11 +4,7 @@ import { useTheme } from 'next-themes'
 
 import meta from '../content/docs/meta.json'
 import LabelSelect from './LabelSelect'
-import {
-  Box, Button, Heading,
-  // Link, 
-  LinkBox, LinkOverlay, Stack, Text, useColorMode, useColorModeValue
-} from '@chakra-ui/react'
+import { Box, Button, Heading, LinkBox, LinkOverlay, Stack, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import SearchBar from './Searchbar'
@@ -38,17 +34,17 @@ export default function Navigation() {
               fontSize='sm'
               fontWeight={router.query.post === page['route'] ? 'bold' : undefined}
             >
-              <Link href={href}>
-                <Box bgColor={router.query.post === page['route'] ? bgColor : undefined} borderRadius={'md'} p={2}>
-                  <Text
-                    fontSize={'sm'}
-                    color={router.query.post === page['route'] ? 'gray.100' : 'gray.400'}
-                  >
-                    {page['display']}
-                  </Text>
-                </Box>
-                {/* <LinkOverlay>
-                </LinkOverlay> */}
+              <Link href={href} passHref>
+                <LinkOverlay>
+                  <Box bgColor={router.query.post === page['route'] ? bgColor : undefined} borderRadius={'md'} p={2}>
+                    <Text
+                      fontSize={'sm'}
+                      color={router.query.post === page['route'] ? 'gray.100' : 'gray.400'}
+                    >
+                      {page['display']}
+                    </Text>
+                  </Box>
+                </LinkOverlay>
               </Link>
             </LinkBox>
           )
