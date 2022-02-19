@@ -4,13 +4,14 @@ import { useTheme } from 'next-themes'
 
 import meta from '../content/docs/meta.json'
 import LabelSelect from './LabelSelect'
-import { Box, Heading, LinkBox, LinkOverlay, Stack, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Heading, LinkBox, LinkOverlay, Stack, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import SearchBar from './Searchbar'
 
 export default function Navigation() {
   const { theme, setTheme } = useTheme()
-  // const { colorMode, toggleColorMode } = useColorMode();
+  const buttonBgColor = useColorModeValue('gray.80', 'gray.50');
   const switchMode = (event) => {
     setTheme(event.target.value);
     console.log('colormode ', event.target.value);
@@ -55,6 +56,19 @@ export default function Navigation() {
 
   return (
     <Stack spacing={6}>
+      <Stack display={{ base: 'block', md: 'none' }}>
+        <Button
+          colorScheme="blue"
+          bgColor={buttonBgColor}
+          // variant="outline"
+          size='sm'
+          onClick={() => window.open('http://dashboard.chatty-cloud.com')}
+        >
+          dashboard
+        </Button>
+        <SearchBar />
+      </Stack>
+
       <Stack>
         <LabelSelect label='SDK' value={theme} size='small' className='block' onChange={switchMode}>
           <option value='react-native'>React Native</option>
