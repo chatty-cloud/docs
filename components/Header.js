@@ -15,7 +15,7 @@ export default function Header() {
   const [showMobileNav, setShowMobileNav] = useState(false)
 
   const bgColor = useColorModeValue('gray.50', 'gray.900');
-  const borderColor = useColorModeValue('gray.400', 'gray.600');
+  const borderColor = useColorModeValue('gray.200', 'gray.800');
   const buttonBgColor = useColorModeValue('gray.80', 'gray.50');
 
   function toggleMobileNav() {

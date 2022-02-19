@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 
 export default function SearchBar() {
   const searchInput = React.createRef();
-  const bgColor = useColorModeValue('gray.200', 'gray.700');
+  const bgColor = useColorModeValue('gray.100', 'gray.800');
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDownEvent)
