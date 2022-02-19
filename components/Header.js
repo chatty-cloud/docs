@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Logo from './Logo'
 import Navigation from './Navigation'
 import SearchBar from './Searchbar'
-import { Box, Button, Flex, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Flex, LinkBox, LinkOverlay, Text, useColorModeValue } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 
 export default function Header() {
@@ -41,14 +41,11 @@ export default function Header() {
     >
 
       <Flex flex={1} maxW={'7xl'} mx={'auto'} alignItems={'center'} justifyContent={'space-between'} px={6}>
-        <Box>
-          <Link href='https://chatty-cloud.com'>
-            <a className='rounded text-primary' aria-label='Go to documentation homepage'>
-              {/* <Logo /> */}
-              <Logo size={'xs'} color={useColorModeValue('#111111', '#EFEFEF')} />
-            </a>
-          </Link>
-        </Box>
+        <Link href='https://www.chatty-cloud.com' passHref>
+          <LinkOverlay>
+            <Logo size={'xs'} color={useColorModeValue('#111111', '#EFEFEF')} />
+          </LinkOverlay>
+        </Link>
 
         <Box display={{ base: 'none', md: 'block' }}>
           <SearchBar />
