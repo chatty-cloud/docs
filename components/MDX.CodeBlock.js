@@ -32,7 +32,7 @@ export default function CodeBlock({ className, children }) {
         overflow={'auto'}
       >
         <Highlight
-          theme={theme}
+          theme={vsDark}
           {...defaultProps}
           code={children.trim()}
           language={codeLanguage}

@@ -1,19 +1,22 @@
 import React from 'react'
 
-import Link from 'next/link'
+import { Box, HStack, Link, LinkOverlay, Text, useColorModeValue } from '@chakra-ui/react'
 
 export default function Footer() {
+  const borderColor = useColorModeValue('gray.200', 'gray.700');
   return (
-    <div className='mt-4 flex items-center justify-between'>
-      <span>
+    <HStack justifyContent={'space-between'} borderTopWidth={1} borderTopColor={borderColor} mt={6} pt={6}>
+
+      <HStack>
         <Link href='https://www.chatty-cloud.com/legal/privacy'>
-          <a className='mr-1.5 text-secondary hover:text-blue'>Privacy</a>
+          <Text fontSize={'sm'}>Privacy</Text>
         </Link>
         <Link href='https://www.chatty-cloud.com/legal/siteterms'>
-          <a className='text-secondary hover:text-blue'>Terms</a>
+          <Text fontSize={'sm'}>Terms</Text>
         </Link>
-      </span>
-      <span className='text-secondary'>&copy; 2021 ChattyCloud Inc.</span>
-    </div>
+      </HStack>
+      <Text fontSize={'sm'} fontWeight={'extrabold'}>&copy; 2021 ChattyCloud Inc.</Text>
+    </HStack>
+
   )
 }

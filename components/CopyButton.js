@@ -1,4 +1,4 @@
-import { Button, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, HStack, Text, useColorModeValue } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
 import CopyToClipboard from 'react-copy-to-clipboard'
@@ -20,7 +20,11 @@ const CopyButton = ({ value, ariaLabel, text, variant, title, className, onCopie
   const buttonVariant = variant || (text ? 'primary' : 'text')
 
   return (
-    <div className='relative inline-flex'>
+    <HStack justifyContent={'space-between'}>
+      <Box display={copied ? 'block' : 'none'}>
+        <Text fontSize={'xs'} fontWeight={'bold'}>Copied</Text>
+      </Box>
+
       <CopyToClipboard text={value} onCopy={handleCopy}>
         <Button
           colorScheme="blue"
@@ -34,13 +38,7 @@ const CopyButton = ({ value, ariaLabel, text, variant, title, className, onCopie
         </Button>
       </CopyToClipboard>
 
-      <div
-        className={`font-sans pointer-events-none transition absolute z-10 px-1 text-white font-semibold dark:bg-gray-50 dark:text-gray-900 text-sm transform -translate-x-1/2 bg-gray-900 rounded shadow-lg py-sm left-1/2 top-1/2 ${copied ? 'opacity-1 translate-y-1.5' : `opacity-0`
-          }`}
-      >
-        Copied
-      </div>
-    </div>
+    </HStack>
   )
 }
 

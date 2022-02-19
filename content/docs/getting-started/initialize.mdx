@@ -13,7 +13,7 @@ Chatty sdk를 정상적으로 사용하기 위해서는 아래 두가지가 필�
 ## Where to initialize
 - 앱이 bootup 하는 과정에 로그인된 사용자를 식별가능한 시점에 init 함수를 호출합니다.
 
-특징
+### 특징
 - 중복으로 호출이 되어도 member를 중복으로 생성하지않습니다. member는 id 값으로 유일하게 존재합니다
 - 멤버가 당신의 서비스에서 탈퇴후 재가입시 id값은 달라져있어야 합니다.(social login 과 같은 경우를 사용할경우 provider's user id값을 사용하지 마세요)
 

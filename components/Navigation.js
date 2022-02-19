@@ -21,7 +21,7 @@ export default function Navigation() {
 
   function SidenavGroup({ categoryID, category, pages }) {
     const router = useRouter();
-    const bgColor = useColorModeValue('gray.100', 'gray.700');
+    const bgColor = useColorModeValue('gray.100', 'gray.800');
     return (
       <Box my={3}>
         <Heading mb={1} size={'sm'}>{category}</Heading>
@@ -55,7 +55,7 @@ export default function Navigation() {
 
 
   return (
-    <Stack spacing={6}>
+    <Stack>
       <Stack display={{ base: 'block', md: 'none' }}>
         <Button
           colorScheme="blue"
@@ -85,16 +85,18 @@ export default function Navigation() {
         </LabelSelect>
       </Stack>
 
-      {toc.order.map((category, index) => {
-        return (
-          <SidenavGroup
-            key={index}
-            categoryID={category.id}
-            category={category.name}
-            pages={category.pages}
-          ></SidenavGroup>
-        )
-      })}
+      <Box>
+        {toc.order.map((category, index) => {
+          return (
+            <SidenavGroup
+              key={index}
+              categoryID={category.id}
+              category={category.name}
+              pages={category.pages}
+            ></SidenavGroup>
+          )
+        })}
+      </Box>
 
     </Stack>
   )

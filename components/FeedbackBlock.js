@@ -1,4 +1,4 @@
-import { Button, HStack, useColorModeValue } from '@chakra-ui/react'
+import { Button, Flex, HStack, Text, useColorModeValue } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 
 export default function FeedbackBlock() {
@@ -30,8 +30,8 @@ export default function FeedbackBlock() {
   }
 
   return (
-    <div className='flex items-center mt-4 mb-4'>
-      <strong className='mr-1'>Was this page useful?</strong>
+    <HStack alignItems={'center'} my={4} spacing={2}>
+      <Text fontWeight={'bold'} fontSize={'sm'}>Was this page useful?</Text>
       {!feedbackProvided ? (
         <HStack>
           <Button
@@ -52,8 +52,8 @@ export default function FeedbackBlock() {
           </Button>
         </HStack>
       ) : (
-        <span>Thank you!</span>
+        <Text fontSize={'sm'}>Thank you!</Text>
       )}
-    </div>
+    </HStack>
   )
 }

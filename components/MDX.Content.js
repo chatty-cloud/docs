@@ -12,8 +12,9 @@ import InfoBlock from './MDX.InfoBlock'
 import InlineCodeBlock from './MDX.InlineCodeBlock'
 import NextBlock from './MDX.NextBlock'
 import TableBlock from './MDX.TableBlock'
+import ListBlock from './MDX.ListBlock'
 import PageInfo from './PageInfo'
-import { Box } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 
 export default function MDXContent({ title, subtitle, banner, body, lastUpdatedOn, slug, category }) {
   const components = {
@@ -23,6 +24,8 @@ export default function MDXContent({ title, subtitle, banner, body, lastUpdatedO
     img: ImageBlock,
     h2: (props) => <AnchorLink {...props} heading='h2' category={category} />,
     h3: (props) => <AnchorLink {...props} heading='h3' category={category} />,
+    ul: (props) => <ListBlock {...props} />,
+    link: (props) => <Text>sdf</Text>,
     NextBlock,
     InfoBlock
   }

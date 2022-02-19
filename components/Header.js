@@ -14,7 +14,7 @@ export default function Header() {
   const [isSignedIn, setSignedInState] = useState(false)
   const [showMobileNav, setShowMobileNav] = useState(false)
 
-  const bgColor = useColorModeValue('gray.300', 'gray.800');
+  const bgColor = useColorModeValue('gray.50', 'gray.900');
   const borderColor = useColorModeValue('gray.400', 'gray.600');
   const buttonBgColor = useColorModeValue('gray.80', 'gray.50');
 

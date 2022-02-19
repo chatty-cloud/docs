@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Link from 'next/link'
+import { Link, HStack, Text } from '@chakra-ui/react'
 
 export default function PageInfo({ lastUpdatedOn, slug }) {
   var lastUpdatedOnDate = new Date()
@@ -11,14 +11,16 @@ export default function PageInfo({ lastUpdatedOn, slug }) {
   const options = { month: 'long' }
 
   return (
-    <div className='flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b mb-4'>
-      <div className='text-secondary mb-1 sm:mb-0'>
+    <HStack justifyContent={'space-between'}>
+      <Text fontSize={'sm'} fontWeight={'bold'} color={'gray.500'}>
         Last updated on {new Intl.DateTimeFormat('en-US', options).format(lastUpdatedOnDate)}{' '}
         {lastUpdatedOnDate.getDate()}, {lastUpdatedOnDate.getFullYear()}
-      </div>
+      </Text>
       <Link href={`https://github.com/chatty-cloud/docs/blob/main/content/docs/${slug}.mdx`}>
-        <a>Help us improve this page</a>
+        <Text fontSize={'sm'} fontWeight={'bold'} color={'gray.500'}>
+          Help us improve this page
+        </Text>
       </Link>
-    </div>
+    </HStack>
   )
 }
