@@ -41,10 +41,10 @@ export default function Header() {
     >
 
       <Flex flex={1} maxW={'7xl'} mx={'auto'} alignItems={'center'} justifyContent={'space-between'} px={6}>
-        <Link href='https://www.chatty-cloud.com' passHref>
-          <LinkOverlay>
+        <Link href='/'>
+          <a>
             <Logo size={'xs'} color={useColorModeValue('#111111', '#EFEFEF')} />
-          </LinkOverlay>
+          </a>
         </Link>
 
         <Box display={{ base: 'none', md: 'block' }}>
