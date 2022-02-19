@@ -59,13 +59,13 @@ export function App({ Component, pageProps }) {
 
 
   return (
-    <ThemeProvider defaultTheme={theme.config.initialColorMode}>
-      <ChakraProvider theme={theme}>
-        <Page>
-          <Component {...pageProps} />
-        </Page>
-      </ChakraProvider>
-    </ThemeProvider>
+    // <ThemeProvider defaultTheme={theme.config.initialColorMode}>
+    <ChakraProvider theme={theme}>
+      <Page>
+        <Component {...pageProps} />
+      </Page>
+    </ChakraProvider>
+    // </ThemeProvider>
   )
 }
 

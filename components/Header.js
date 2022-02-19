@@ -28,26 +28,8 @@ export default function Header() {
 
   return (
     <>
-      {/* <a
-        href='#content'
-        className='absolute z-50 px-2 py-1 border-b border-r rounded-br -ml-96 focus:ml-0 bg-secondary'
-      >
-        Skip to content
-      </a> */}
       <Box zIndex={40} w={'full'} py={4} mx={'auto'} borderBottomWidth={1} borderBottomColor={borderColor}>
 
-        {/* Overlay */}
-        {/* <div
-          className={classNames('md:hidden duration-300 fixed z-30 inset-0 transition-opacity', {
-            'opacity-0 pointer-events-none': !showMobileNav,
-            'opacity-100 pointer-events-auto': showMobileNav
-          })}
-          aria-hidden='true'
-        >
-          <div className='absolute inset-0 bg-primary'></div>
-        </div> */}
-
-        {/* <Box zIndex={50} w={'full'} px={8} pt={3} display={{ base: showMobileNav ? 'block' : 'none', md: 'none' }}></Box> */}
         <header className='relative z-50 grid items-center grid-cols-2 px-4 mx-auto md:grid-cols-3 md:grid-rows-1 max-w-7xl '>
           <div className='flex items-center col-start-1 row-start-1'>
             <Link href='https://chatty-cloud.com'>
