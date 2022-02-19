@@ -13,6 +13,7 @@ import InlineCodeBlock from './MDX.InlineCodeBlock'
 import NextBlock from './MDX.NextBlock'
 import TableBlock from './MDX.TableBlock'
 import PageInfo from './PageInfo'
+import { Box } from '@chakra-ui/react'
 
 export default function MDXContent({ title, subtitle, banner, body, lastUpdatedOn, slug, category }) {
   const components = {
@@ -27,11 +28,11 @@ export default function MDXContent({ title, subtitle, banner, body, lastUpdatedO
   }
 
   return (
-    <div className='mdx-content'>
+    <Box>
       <HeadingBlock title={title} subtitle={subtitle} banner={banner} />
       <MDXRemote {...body} components={components} lazy />
       <FeedbackBlock />
       <PageInfo lastUpdatedOn={lastUpdatedOn} slug={slug}></PageInfo>
-    </div>
+    </Box>
   )
 }

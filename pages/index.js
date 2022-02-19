@@ -1,7 +1,7 @@
+import { Button } from '@chakra-ui/react'
 import Link from 'next/link'
 import SVG from 'react-inlinesvg'
 
-import ButtonLink from '../components/ButtonLink'
 import Footer from '../components/Footer'
 import Icon from '../components/Icon'
 import Layout from '../components/layout'
@@ -28,9 +28,9 @@ export default function Overview() {
           changes and more.
         </p>
         <p>
-          <ButtonLink href='/concepts/chattycloud-workflow' variant='secondary'>
+          <Button colorScheme="blue" variant="outline" size='sm' onClick={() => window.open('http://dashboard.chatty-cloud.com')}>
             Learn more
-          </ButtonLink>
+          </Button>
         </p>
       </div>
 

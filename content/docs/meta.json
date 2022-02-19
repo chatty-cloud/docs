@@ -1,154 +1,57 @@
 {
   "order": [
     {
-      "id": "concepts",
-      "name": "Quick Start",
-      "description": "Explore key concepts of the ChattyCloud database platform.",
+      "id": "getting-started",
+      "name": "Getting Started",
+      "description": "Explore key concepts of the ChattyCloud service",
       "image": "/img/internals/category_concepts_light.png",
       "pages": [
         {
-          "route": "chattycloud-workflow",
-          "display": "ChattyCloud workflow"
+          "route": "introduction",
+          "display": "Introduction",
+          "desc": "features들 소개 push와 관련된 내용들 거의 모든 feature들 소개"
         },
         {
-          "route": "branching",
-          "display": "Branching"
+          "route": "installation",
+          "display": "Installation",
+          "desc": "react native lib, sdk lib"
         },
         {
-          "route": "connection-strings",
-          "display": "Connection strings"
+          "route": "initialize",
+          "display": "Initialize",
+          "desc": "bootup과정에서 chat.init을 사용하는 방법 가이드, 소스"
         },
         {
-          "route": "database-imports",
-          "display": "Database imports"
+          "route": "1-to-1",
+          "display": "1-to-1 chat",
+          "desc": "대화상대를 지정하여 chat room을 만들고 채팅하는 방법에 대한 소개"
         },
         {
-          "route": "regions",
-          "display": "Regions"
+          "route": "listing-chat",
+          "display": "Listing chats",
+          "desc": "내가 참여한 채팅의 목록을 불러오는 방법"
         },
         {
-          "route": "nonblocking-schema-changes",
-          "display": "Non-blocking schema changes"
+          "route": "push-notifications",
+          "display": "Push notifications",
+          "desc": "firebase를 통해 어떻게 push를 받을수 잇는지 missed count는 어떤식으로 받아서 표시해주는지"
         },
         {
-          "route": "web-console",
-          "display": "Web console"
+          "route": "group-chat",
+          "display": "Group chat",
+          "desc": "3명이상이 참여하는 group chat을 만드는 방법과 1-to-1과 어떻게 다른지 "
         },
         {
-          "route": "authentication-methods",
-          "display": "Authentication methods"
+          "route": "image-upload",
+          "display": "Image upload"
         },
         {
-          "route": "mfa",
-          "display": "Multi-factor authentication"
+          "route": "auto-translation",
+          "display": "Auto translation"
         },
         {
-          "route": "sso",
-          "display": "Single sign-on"
-        },
-        {
-          "route": "security",
-          "display": "Security & Compliance"
-        },
-        {
-          "route": "access-control",
-          "display": "Access control"
-        },
-        {
-          "route": "audit-log",
-          "display": "Audit log"
-        },
-        {
-          "route": "security-log",
-          "display": "Security log"
-        },
-        {
-          "route": "query-statistics",
-          "display": "Query statistics"
-        },
-        {
-          "route": "billing",
-          "display": "Billing"
-        },
-        {
-          "route": "back-up-and-restore",
-          "display": "Back up and restore"
-        }
-      ]
-    },
-    {
-      "id": "tutorials",
-      "name": "Tutorials",
-      "description": "Learn the basics with our hands-on tutorials.",
-      "image": "/img/internals/category_tutorials_light.png",
-      "pages": [
-        {
-          "route": "chattycloud-quick-start-guide",
-          "display": "ChattyCloud quick start guide"
-        },
-        {
-          "route": "connect-any-application",
-          "display": "Connect any app"
-        },
-        {
-          "route": "connect-rails-app",
-          "display": "Connect a Rails app"
-        },
-        {
-          "route": "connect-nodejs-app",
-          "display": "Connect a Node.js app"
-        },
-        {
-          "route": "nextjs-chattycloud-netlify-template",
-          "display": "Next.js and Netlify Template"
-        },
-        {
-          "route": "deploy-to-vercel",
-          "display": "Deploy to Vercel"
-        },
-        {
-          "route": "prisma-data-platform-integration",
-          "display": "Prisma Data Platform integration"
-        },
-        {
-          "route": "automatic-rails-migrations",
-          "display": "Automatic Rails migrations"
-        },
-        {
-          "route": "automatic-prisma-migrations",
-          "display": "Automatic Prisma migrations"
-        },
-        {
-          "route": "change-unique-key",
-          "display": "Change single unique key"
-        },
-        {
-          "route": "operating-without-foreign-keys",
-          "display": "Operating without FK constraints"
-        }
-      ]
-    },
-    {
-      "id": "reference",
-      "name": "Reference",
-      "description": "Learn how to set up your ChattyCloud development environment, CLI, and more!",
-      "image": "/img/internals/category_reference_light.png",
-      "pages": [
-        {
-          "route": "chattycloud-environment-setup",
-          "display": "ChattyCloud environment set up"
-        },
-        {
-          "route": "chattycloud-cli",
-          "display": "ChattyCloud CLI"
-        },
-        {
-          "route": "secure-connections",
-          "display": "Secure connections"
-        },
-        {
-          "route": "service-tokens",
-          "display": "Service tokens"
+          "route": "missed-badge-count",
+          "display": "Missed badge count"
         }
       ]
     }

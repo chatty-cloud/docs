@@ -23,6 +23,9 @@ function Logo({ size, color, disabled }) {
     case 'md':
       width = '400';
       break;
+    default:
+      width = '200';
+      break;
   }
   return (
     <Box py={2}>

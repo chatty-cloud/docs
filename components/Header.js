@@ -4,18 +4,17 @@ import classNames from 'classnames'
 import Cookies from 'js-cookie'
 import Link from 'next/link'
 
-import ButtonLink from './ButtonLink'
-import HamburgerMenu from './HamburgerMenu'
 import Logo from './Logo'
 import Navigation from './Navigation'
 import SearchBar from './Searchbar'
-import { Box, Text, useColorModeValue } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { Box, Button, Flex, Text, useColorModeValue } from '@chakra-ui/react'
+import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 
 export default function Header() {
   const [isSignedIn, setSignedInState] = useState(false)
   const [showMobileNav, setShowMobileNav] = useState(false)
   const borderColor = useColorModeValue('gray.400', 'gray.600')
+  const buttonBgColor = useColorModeValue('gray.80', 'gray.50')
 
   function toggleMobileNav() {
     setShowMobileNav((s) => !s)
@@ -38,7 +37,7 @@ export default function Header() {
       <Box zIndex={40} w={'full'} py={4} mx={'auto'} borderBottomWidth={1} borderBottomColor={borderColor}>
 
         {/* Overlay */}
-        <div
+        {/* <div
           className={classNames('md:hidden duration-300 fixed z-30 inset-0 transition-opacity', {
             'opacity-0 pointer-events-none': !showMobileNav,
             'opacity-100 pointer-events-auto': showMobileNav
@@ -46,9 +45,10 @@ export default function Header() {
           aria-hidden='true'
         >
           <div className='absolute inset-0 bg-primary'></div>
-        </div>
+        </div> */}
 
-        <header className='relative z-50 grid items-center grid-cols-2 px-3 mx-auto md:grid-cols-3 md:grid-rows-1 max-w-7xl sm:px-6 lg:px-8'>
+        {/* <Box zIndex={50} w={'full'} px={8} pt={3} display={{ base: showMobileNav ? 'block' : 'none', md: 'none' }}></Box> */}
+        <header className='relative z-50 grid items-center grid-cols-2 px-4 mx-auto md:grid-cols-3 md:grid-rows-1 max-w-7xl '>
           <div className='flex items-center col-start-1 row-start-1'>
             <Link href='https://chatty-cloud.com'>
               <a className='rounded text-primary' aria-label='Go to documentation homepage'>
@@ -56,14 +56,11 @@ export default function Header() {
                 <Logo size={'xs'} color={useColorModeValue('#111111', '#EFEFEF')} />
               </a>
             </Link>
-            <div className='flex items-center lg:text-lg font-medium pl-1.5'>
-              <Link href='/'>
-                {/* <a className='text-primary'>Documentation</a> */}
-                <Text>Documentation</Text>
-              </Link>
-            </div>
           </div>
 
+          {/* <Flex flexDirection={'row'} flex={1} pt={2}>
+            <SearchBar />
+          </Flex> */}
           <div
             className={classNames(
               'col-start-1 col-span-2 md:col-span-1 pt-3 md:pt-0 row-start-3 md:col-start-2 md:row-start-1 md:flex',
@@ -74,6 +71,7 @@ export default function Header() {
           >
             <SearchBar />
           </div>
+
           <div
             className={classNames(
               'col-start-1 col-span-2 md:col-span-1 row-start-2 pt-5 md:pt-0 md:row-start-1 md:col-start-3 md:justify-end md:flex',
@@ -82,34 +80,33 @@ export default function Header() {
               }
             )}
           >
-            <ButtonLink href='https://dashboard.chatty-cloud.com' variant='secondary' className='mr-2'>
+            <Button
+              colorScheme="blue"
+              bgColor={buttonBgColor}
+              // variant="outline"
+              size='sm'
+              onClick={() => window.open('http://dashboard.chatty-cloud.com')}
+            >
               dashboard
-            </ButtonLink>
-            {/* <ButtonLink href='https://dashboard.chatty-cloud.com/' variant='secondary'>
-              {isSignedIn ? 'Go to dashboard' : 'Sign in'}
-            </ButtonLink> */}
+            </Button>
           </div>
+
           <div className='relative z-50 flex justify-end col-start-2 row-start-1 align-center md:hidden'>
             <button
               aria-label='Open navigation menu'
               className='flex appearance-none focus:outline-none'
               onClick={toggleMobileNav}
             >
-              <HamburgerIcon w={6} h={6} />
+              {!showMobileNav ? <HamburgerIcon w={6} h={6} /> : <CloseIcon w={4} h={4} />}
+
               {/* <HamburgerMenu open={showMobileNav} /> */}
             </button>
           </div>
         </header>
-        <div
-          className={classNames('relative z-40 w-full px-3 pt-3 sm:px-6 lg:px-8 sm:w-1/2 md:hidden', {
-            hidden: !showMobileNav
-          })}
-        >
+        <Box zIndex={40} w={'full'} px={8} pt={3} display={{ base: showMobileNav ? 'block' : 'none', md: 'none' }}>
           <Navigation />
-        </div>
-      </Box>
-      {/* <div className='relative z-40 w-full py-3 mx-auto border-b bg-primary text-primary'>
-      </div> */}
+        </Box>
+      </Box >
     </>
   )
 }

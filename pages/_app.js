@@ -1,15 +1,15 @@
 import '../styles/index.css'
 import { useEffect, useState } from 'react'
 
-import Head from 'next/head'
 import { useRouter } from 'next/router'
-
 import Page from '../components/SegmentPageTracker'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import { mode } from '@chakra-ui/theme-tools'
+import theme from '../components/Theme'
+import { ThemeProvider, useTheme } from 'next-themes'
 
 export function App({ Component, pageProps }) {
   const router = useRouter()
+  // const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -56,33 +56,16 @@ export function App({ Component, pageProps }) {
     }
   }, [])
 
-  const styles = {
-    global: (props) => ({
-      body: {
-        color: mode('gray.800', 'gray.100')(props),
-        bg: mode('white', 'gray.900')(props),
-      },
-    }),
-  };
 
-  const config = {
-    initialColorMode: 'dark',
-    useSystemColorMode: true,
-  }
-
-
-
-  const theme = extendTheme({
-    styles,
-    config
-  });
 
   return (
-    <ChakraProvider theme={theme}>
-      <Page>
-        <Component {...pageProps} />
-      </Page>
-    </ChakraProvider>
+    <ThemeProvider defaultTheme={theme.config.initialColorMode}>
+      <ChakraProvider theme={theme}>
+        <Page>
+          <Component {...pageProps} />
+        </Page>
+      </ChakraProvider>
+    </ThemeProvider>
   )
 }
 

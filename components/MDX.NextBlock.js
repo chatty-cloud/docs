@@ -1,13 +1,15 @@
 import React from 'react'
 
 import Link from 'next/link'
+import { Box, Heading, useColorModeValue } from '@chakra-ui/react'
 
 export default function NextBlock(props) {
   const { steps } = props
+  const bgColor = useColorModeValue('gray.200', 'gray.700');
 
   return (
-    <div className='bg-secondary px-3 pt-2 rounded border mt-4 mb-4'>
-      <h1 className='font-semibold mb-1'>Next steps</h1>
+    <Box borderRadius={'lg'} p={3} bgColor={bgColor} my={2}>
+      <Heading size='sm'>Next steps</Heading>
       <ul className='list-disc list-inside'>
         {steps.map((step) => {
           return (
@@ -19,6 +21,6 @@ export default function NextBlock(props) {
           )
         })}
       </ul>
-    </div>
+    </Box>
   )
 }

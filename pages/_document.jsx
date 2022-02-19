@@ -2,6 +2,8 @@ import React from 'react'
 
 import * as snippet from '@segment/snippet'
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import { ColorModeScript } from '@chakra-ui/react'
+import theme from '../components/Theme'
 
 const {
   // This write key is associated with https://segment.com/nextjs-example/sources/nextjs.
@@ -35,6 +37,7 @@ export default class Document extends NextDocument {
           <script dangerouslySetInnerHTML={{ __html: this.renderSnippet() }} />
         </Head>
         <body>
+          {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
           <Main />
           <NextScript />
         </body>

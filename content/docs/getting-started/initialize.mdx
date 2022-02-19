@@ -1,13 +1,50 @@
 ---
-title: 'Authentication methods'
-subtitle: 'Understand and select your preferred authentication method in PlanetScale.'
+title: 'Initialize'
+subtitle: 'How to initialize chatty sdk'
 ---
 
-## Overview
+## What for initialize
 
-There are three ways to authenticate with PlanetScale: _email address and password_, _single sign-on_, and _OAuth via GitHub_.
+Chatty sdk를 정상적으로 사용하기 위해서는 아래 두가지가 필요합니다
 
-Let's break down how each of these work.
+- dashboard에서 생상한 app의 API Key
+- 로그인된 사용자의 기본정보 (id, name) 을 채팅을 위한 Member로 사용하겠다고 지정
+
+## Where to initialize
+- 앱이 bootup 하는 과정에 로그인된 사용자를 식별가능한 시점에 init 함수를 호출합니다.
+
+특징
+- 중복으로 호출이 되어도 member를 중복으로 생성하지않습니다. member는 id 값으로 유일하게 존재합니다
+- 멤버가 당신의 서비스에서 탈퇴후 재가입시 id값은 달라져있어야 합니다.(social login 과 같은 경우를 사용할경우 provider's user id값을 사용하지 마세요)
+
+
+file: App.js
+```javascript
+import Chatty, { ChattyTypes } from 'chatty-cloud';
+
+...
+
+if (isLoggedIn) {
+  await Chatty.init({
+    apiKey: <API KEY>, // API Key of your app that created in dashboard 
+    member: {
+      id: <MEMBER ID>,                // mandatory  (ex: user.id)
+      name: <MEMBER NAME>,            // mandatory  (ex: user.name)
+      avatar: <MEMBER AVATAR URL>,    // optional   (ex: user.avatar)
+      language: <MEMBER LANGUAGE>,    // optional   (ex: 'en')
+      country: <MEMBER COUNTRY>,      // optional   (ex: 'US')
+      deviceToken: <FCM DEVICE TOKEN> // optional   
+    }
+  });
+}
+```
+
+<InfoBlock type="warning">
+  Please manage API Key securely.
+</InfoBlock>
+
+
+
 
 ## Email address and password
 
@@ -29,6 +66,7 @@ Users can authenticate with PlanetScale using their GitHub account.
   PlanetScale doesn't maintain the passwords for these accounts. Losing access
   to your GitHub account prevents accessing your PlanetScale account.
 </InfoBlock>
+
 
 <InfoBlock type="note">
   Enabling SSO removes OAuth access for all members of your{' '}

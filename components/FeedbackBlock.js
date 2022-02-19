@@ -1,10 +1,10 @@
+import { Button, HStack, useColorModeValue } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-
-import Button from './Button'
 
 export default function FeedbackBlock() {
   const pageURL = typeof window !== 'undefined' ? window.location.href : ''
   const [feedbackProvided, setFeedbackProvided] = useState(false)
+  const buttonBgColor = useColorModeValue('gray.80', 'gray.50')
 
   const feedbackValues = {
     PLUS: 1,
@@ -33,19 +33,24 @@ export default function FeedbackBlock() {
     <div className='flex items-center mt-4 mb-4'>
       <strong className='mr-1'>Was this page useful?</strong>
       {!feedbackProvided ? (
-        <>
+        <HStack>
           <Button
-            size='xsmall'
-            variant='secondary'
-            className='mr-1'
+            colorScheme="blue"
+            bgColor={buttonBgColor}
+            size='xs'
             onClick={(e) => logFeedback(feedbackValues.PLUS, e)}
           >
             Yes
           </Button>
-          <Button size='xsmall' variant='secondary' onClick={(e) => logFeedback(feedbackValues.MINUS, e)}>
+          <Button
+            colorScheme="blue"
+            bgColor={buttonBgColor}
+            size='xs'
+            onClick={(e) => logFeedback(feedbackValues.MINUS, e)}
+          >
             No
           </Button>
-        </>
+        </HStack>
       ) : (
         <span>Thank you!</span>
       )}
