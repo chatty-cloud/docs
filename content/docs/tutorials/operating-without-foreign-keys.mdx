@@ -9,7 +9,7 @@ A foreign key is a logical association of rows between two tables, in a parent-c
 
 A `FOREIGN KEY` _constraint_ is a database construct, an implementation that _forces_ the foreign key relationship's integrity (aka referential integrity). Namely, it ensures that a child table can only reference a parent table when the appropriate row _exists_ in the parent table. A constraint prevents the existence of such "orphaned rows" in different methods, described below.
 
-PlanetScale doesn't support `FOREIGN KEY` constraints. You are encouraged to use the relational model, and associate tables by "pointing" rows from one table to another. However, the `CONSTRAINT ... FOREIGN KEY` definition is not allowed in your schemas.
+ChattyCloud doesn't support `FOREIGN KEY` constraints. You are encouraged to use the relational model, and associate tables by "pointing" rows from one table to another. However, the `CONSTRAINT ... FOREIGN KEY` definition is not allowed in your schemas.
 
 There are two major technical reasons why foreign key constraints are not supported:
 

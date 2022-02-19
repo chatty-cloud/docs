@@ -1,22 +1,22 @@
 ---
 title: 'Service tokens'
-subtitle: 'Create service tokens for your PlanetScale organization.'
+subtitle: 'Create service tokens for your ChattyCloud organization.'
 ---
 
 ## Service tokens
 
-PlanetScale provides the ability to create service tokens for your PlanetScale organization via the CLI or directly in the UI.
+ChattyCloud provides the ability to create service tokens for your ChattyCloud organization via the CLI or directly in the UI.
 
 <InfoBlock type='note'>
   Service tokens are not recommended for connecting to production databases. Instead, connect securely to your database
-  using PlanetScale's <a href='https://docs.planetscale.com/concepts/connection-strings'>connection strings</a>.
+  using ChattyCloud's <a href='https://docs.chatty-cloud.com/concepts/connection-strings'>connection strings</a>.
 </InfoBlock>
 
-## Create service tokens using the PlanetScale UI
+## Create service tokens using the ChattyCloud UI
 
 ### Create a new service token
 
-1. Go to your organization settings page for service tokens: `app.planetscale.com/<org>/settings/service-tokens`
+1. Go to your organization settings page for service tokens: `app.chatty-cloud.com/<org>/settings/service-tokens`
 
 ![Service token settings page](/img/docs/servicetokens-settings-overview.png)
 
@@ -34,10 +34,6 @@ This will open a pop-up modal that prompts you to name the service token.
 
 You will need both the token ID and the token value to connect to your databases.
 
-```
-PLANETSCALE_SERVICE_TOKEN_NAME=your-token-id
-PLANETSCALE_SERVICE_TOKEN=your-token-value
-```
 
 <InfoBlock type='tip'>
   Be sure to copy the service token after you create it. There's no way to retrieve the token value once you leave this
@@ -58,7 +54,7 @@ For each database you add, you have the ability to select from the following per
 - connect_branch
 - connect_production_branch
 
-A complete list of service token access permissions can be found [here](https://docs.planetscale.com/reference/planetscale-cli#service-tokens-in-organizations).
+A complete list of service token access permissions can be found [here](https://docs.chatty-cloud.com/reference/chatty-cloud-cli#service-tokens-in-organizations).
 
 2. Once you have selected the access permissions, click "Save permissions" to save your selection.
 
@@ -66,7 +62,7 @@ You can add access to another database in your organization by clicking on the "
 
 ### Manage database access permissions
 
-1. Go to the service tokens page for your organization: `app.planetscale.com/<org>/settings/service-tokens`
+1. Go to the service tokens page for your organization: `app.chatty-cloud.com/<org>/settings/service-tokens`
 2. Click on the service token ID for the service token you would like to update.
 3. Click on the blue link "Manage permissions" underneath the database name and permissions to add or remove access permissions.
 
@@ -80,16 +76,16 @@ To remove all access permissions for a database, click on the "Remove Access" bu
 
 You can delete a service token at any time from the service token detail page.
 
-1. Go to the service tokens page for your organization: `app.planetscale.com/<org>/settings/service-tokens`
+1. Go to the service tokens page for your organization: `app.chatty-cloud.com/<org>/settings/service-tokens`
 2. Click on the service token ID for the service token you would like to delete.
 3. Click on the "Delete service token" button in the upper right hand corner.
 4. Confirm deletion by clicking the "Delete" button in the pop-up modal.
 
 Deleting a service token will sever any database connections that use the given service token.
 
-## Create service tokens using the PlanetScale CLI
+## Create service tokens using the ChattyCloud CLI
 
-Use the PlanetScale CLI to create and manage service tokens for your PlanetScale organization.
+Use the ChattyCloud CLI to create and manage service tokens for your ChattyCloud organization.
 
 ### Create a new service token
 
@@ -117,7 +113,7 @@ For example, to give a service token the ability to create, read, and delete bra
 pscale service-token add-access <token id> read_branch delete_branch create_branch --database <database name>
 ```
 
-A complete list of service token access permissions can be found [here](https://docs.planetscale.com/reference/planetscale-cli#service-tokens-in-organizations).
+A complete list of service token access permissions can be found [here](https://docs.chatty-cloud.com/reference/chatty-cloud-cli#service-tokens-in-organizations).
 
 ### Remove database access permissions
 

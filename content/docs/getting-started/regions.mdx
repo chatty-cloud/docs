@@ -5,7 +5,7 @@ subtitle: 'Selecting a region during database and branch creation.'
 
 ## Overview
 
-PlanetScale currently offers database deployment in multiple regions. Select the region closest to your application servers to reduce latency between your database and application. Deploy development branches in the region closest to your own location to reduce latency when working with the branch.
+ChattyCloud currently offers database deployment in multiple regions. Select the region closest to your application servers to reduce latency between your database and application. Deploy development branches in the region closest to your own location to reduce latency when working with the branch.
 
 A number of resources exist to help find which region has the lowest latency from your location – such as [CloudPing](https://www.cloudping.co/grid#).
 
@@ -22,7 +22,7 @@ Currently, the following regions are supported, with their respective slugs:
 
 ## Selecting the database region
 
-PlanetScale allows you to select the region for the main branch of your database during database creation. By default, all database branches created within this database will also be created in this region.
+ChattyCloud allows you to select the region for the main branch of your database during database creation. By default, all database branches created within this database will also be created in this region.
 ![Select your database region.](/img/docs/database-region.png)
 
 You can also select the region while creating a database via the CLI by using
@@ -41,7 +41,7 @@ pscale database create my-production-database --region us-west
 
 ## Selecting the branch region
 
-PlanetScale allows you to select a region for development branches during
+ChattyCloud allows you to select a region for development branches during
 creation as well. By default, it is set to the same region as its database.
 
 ![Select your branch region.](/img/docs/branch-region.png)
@@ -57,13 +57,13 @@ pscale branch create my-production-database add-tables --region eu-west
 
 ## Restricting the branch regions
 
-[Organization Administrators](/concepts/access-control#organization-administrator) can restrict branches to only being created in the same region as the one selected during database creation. To enable this setting, check the _Restrict region_ setting in the settings page for the database: `app.planetscale.com/<org>/<database>/settings`.
+[Organization Administrators](/concepts/access-control#organization-administrator) can restrict branches to only being created in the same region as the one selected during database creation. To enable this setting, check the _Restrict region_ setting in the settings page for the database: `app.chatty-cloud.com/<org>/<database>/settings`.
 
 ![Restrict your branches to one region.](/img/docs/restrict-branch-region.png)
 
 ## Need help?
 
-Get help from PlanetScale's [support team](https://www.planetscale.com/support), or join our [GitHub Discussion board](https://github.com/planetscale/beta/discussions) to see how others are using PlanetScale.
+Get help from ChattyCloud's [support team](https://www.chatty-cloud.com/support), or join our [GitHub Discussion board](https://github.com/chatty-cloud/beta/discussions) to see how others are using ChattyCloud.
 
 <NextBlock
   steps={[

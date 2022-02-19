@@ -5,12 +5,12 @@ subtitle: ''
 
 ## Introduction
 
-In this tutorial, you'll create a simple Node.js and Express.js application and connect it to a PlanetScale database.
+In this tutorial, you'll create a simple Node.js and Express.js application and connect it to a ChattyCloud database.
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/)
-- [PlanetScale CLI](https://github.com/planetscale/cli)
+- [ChattyCloud CLI](https://github.com/chatty-cloud/cli)
 - Authenticate the CLI with the following command:
 
 ```
@@ -27,7 +27,7 @@ pscale database create <DATABASE_NAME>
 
 Next, let's add some data to the database. You'll create a new table called `users` and add one record to it.
 
-To do this, use the PlanetScale CLI shell to open a MySQL shell where you can manipulate your database. You may need to [install the MySQL command line client](/reference/planetscale-environment-setup) if you haven't already.
+To do this, use the ChattyCloud CLI shell to open a MySQL shell where you can manipulate your database. You may need to [install the MySQL command line client](/reference/chatty-cloud-environment-setup) if you haven't already.
 
 ```bash
 pscale shell <DATABASE_NAME> <BRANCH_NAME>
@@ -76,7 +76,7 @@ Next, you'll set up the Express starter application.
 Clone the starter repository:
 
 ```bash
-git clone https://github.com/planetscale/express-example.git
+git clone https://github.com/chatty-cloud/express-example.git
 ```
 
 Enter into the folder and install the dependencies with:
@@ -88,9 +88,9 @@ npm install
 
 Now that your application is set up and the database is ready to be used, let's connect them.
 
-## Connect to PlanetScale with Express.js
+## Connect to ChattyCloud with Express.js
 
-There are two ways to connect your Express application to your PlanetScale database: **using client certificates** or **using a connection string**. Both options are covered below.
+There are two ways to connect your Express application to your ChattyCloud database: **using client certificates** or **using a connection string**. Both options are covered below.
 
 ### Using client certificates with the CLI
 
@@ -101,7 +101,7 @@ pscale connect <DATABASE_NAME> <BRANCH_NAME> --execute 'node app.js'
 ```
 
 <InfoBlock type='note'>
-  Running <inlineCode>pscale connect</inlineCode> with the execute flag will pass a <inlineCode>DATABASE_URL</inlineCode> to the Node application, enabling it to connect to PlanetScale. Don't forget to look in <inlineCode>app.js</inlineCode> to see how the DATABASE_URL is used.
+  Running <inlineCode>pscale connect</inlineCode> with the execute flag will pass a <inlineCode>DATABASE_URL</inlineCode> to the Node application, enabling it to connect to ChattyCloud. Don't forget to look in <inlineCode>app.js</inlineCode> to see how the DATABASE_URL is used.
 </InfoBlock>
 
 Navigate to [http://localhost:3000](http://localhost:3000) and you'll see the data from your `users` table!
@@ -116,7 +116,7 @@ First, create your `.env` file by renaming the `env.example` file to `.env`:
 mv env.example .env
 ```
 
-Next, using the PlanetScale CLI, create a new username and password for the branch of your database:
+Next, using the ChattyCloud CLI, create a new username and password for the branch of your database:
 
 ```
 pscale password create <DATABASE_NAME> <BRANCH_NAME> <PASSWORD_NAME>
@@ -159,9 +159,9 @@ Navigate to [http://localhost:3000](http://localhost:3000) and you'll see the da
 
 ## What's next?
 
-Learn more about how PlanetScale allows you to make [non-blocking schema changes](/concepts/nonblocking-schema-changes) to your database tables without locking or causing downtime for production databases. If you're interested in learning how to secure your application when connecting to PlanetScale,
-please read [Connecting to PlanetScale securely](/reference/planetscale-security).
+Learn more about how ChattyCloud allows you to make [non-blocking schema changes](/concepts/nonblocking-schema-changes) to your database tables without locking or causing downtime for production databases. If you're interested in learning how to secure your application when connecting to ChattyCloud,
+please read [Connecting to ChattyCloud securely](/reference/chatty-cloud-security).
 
 ## Need help?
 
-Get help from [PlanetScale's support team](https://www.planetscale.com/support), or join our [GitHub Discussion board](https://github.com/planetscale/beta/discussions) to see how others are using PlanetScale.
+Get help from [ChattyCloud's support team](https://www.chatty-cloud.com/support), or join our [GitHub Discussion board](https://github.com/chatty-cloud/beta/discussions) to see how others are using ChattyCloud.

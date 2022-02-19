@@ -4,7 +4,7 @@
 
 - Install homebrew (https://brew.sh/)
 - Install node and npm
-- Git clone this repository (`git@github.com:planetscale/docs.planetscale.com.git`)
+- Git clone this repository (`git@github.com:chatty-cloud/docs.chatty-cloud.com.git`)
 - Switch to repository's folder
 - Install package dependencies with `npm install`
 - Execute `npx next dev` or `npm run develop` to start a local nextJS server
@@ -19,5 +19,5 @@
 
 ## Notes
 
-- Search is powered by [DocSearch](https://docsearch.algolia.com/). PlanetScale's configuration on DocSearch can be viewed [here](https://github.com/algolia/docsearch-configs/blob/master/configs/planetscale.json)
+- Search is powered by [DocSearch](https://docsearch.algolia.com/). ChattyCloud's configuration on DocSearch can be viewed [here](https://github.com/algolia/docsearch-configs/blob/master/configs/chatty-cloud.json)
 - Sitemap is only generated during a build and is not checked in to the repo.

@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         source: '/v1/vitess-operator/:match*',
-        destination: 'https://github.com/planetscale/vitess-operator/tree/main/docs',
+        destination: 'https://github.com/chatty-cloud/vitess-operator/tree/main/docs',
         permanent: true
       },
       {
@@ -42,7 +42,7 @@ module.exports = {
         permanent: true
       },
       {
-        source: '/reference/planetscale-security',
+        source: '/reference/chatty-cloud-security',
         destination: '/reference/secure-connections',
         permanent: true
       }

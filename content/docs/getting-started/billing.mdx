@@ -1,25 +1,25 @@
 ---
 title: 'Billing'
-subtitle: 'PlanetScale pricing was designed for transparency and scalability.'
+subtitle: 'ChattyCloud pricing was designed for transparency and scalability.'
 ---
 
 ## Overview
 
-PlanetScale offers a free *Developer* plan with a generous **10 GB of storage**. At $29 per month, our paid *Scaler* plan comes with 25 GB storage, 500m row `reads`, and 50m row `writes`, with the option to pay for additional usage and storage as you go. This scalable, pay-as-you-grow model means you'll never have to over-provision resources.
+ChattyCloud offers a free *Developer* plan with a generous **10 GB of storage**. At $29 per month, our paid *Scaler* plan comes with 25 GB storage, 500m row `reads`, and 50m row `writes`, with the option to pay for additional usage and storage as you go. This scalable, pay-as-you-grow model means you'll never have to over-provision resources.
 
 <InfoBlock type="note">
   We use <a href="https://simple.wikipedia.org/wiki/Gibibyte"><strong>gibibytes, otherwise known as binary gigabytes</strong></a>, to calculate storage and usage limits. For reference, 1 binary gigabyte is equivalent to 2<sup>30</sup> bytes.
 </InfoBlock>
 
-### PlanetScale charges on three factors
+### ChattyCloud charges on three factors
 
-- **Reads**: Retrieving or inspecting rows during a query or mutation of any kind to your PlanetScale databases.
-- **Writes**: Adding new information or changing existing information in your PlanetScale databases.
+- **Reads**: Retrieving or inspecting rows during a query or mutation of any kind to your ChattyCloud databases.
+- **Writes**: Adding new information or changing existing information in your ChattyCloud databases.
 - **Storage**: Data saved in the form of tables, columns, rows, and their corresponding relationships.
 
-## PlanetScale plans
+## ChattyCloud plans
 
-PlanetScale applies billing plans at the **database level**. You can create several databases under one account/organization. The usage charges will be scoped to each database, which you can find all together in the [billing section for your Organization](/concepts/billing#organization-billing-page).
+ChattyCloud applies billing plans at the **database level**. You can create several databases under one account/organization. The usage charges will be scoped to each database, which you can find all together in the [billing section for your Organization](/concepts/billing#organization-billing-page).
 
 We offer three plans, summarized below:
 
@@ -34,7 +34,7 @@ We offer three plans, summarized below:
 | **Automated Backups**| Once daily           | Every 12 hours                  | Configurable                                  |
 | **Autoscaling**      | Not include          | Included                        | Configurable                                  |
 | **Support**          | Community            | Standard                        | Premium                                       |
-| **Monthly fee**      | $0                   | $29 per database                | [Contact us](https://planetscale.com/contact) |
+| **Monthly fee**      | $0                   | $29 per database                | [Contact us](https://chatty-cloud.com/contact) |
 
 <InfoBlock type="note">
   You are limited to 1 free database per organization.
@@ -42,10 +42,10 @@ We offer three plans, summarized below:
 
 All plans are billed on a **monthly basis**. 
 
-For more information about [our `Enterprise` plan](https://planetscale.com/enterprise), please [contact our sales team](https://www.planetscale.com/contact). For an overview of each plan's complete offerings and FAQ, [check out the pricing page](https://planetscale.com/pricing).
+For more information about [our `Enterprise` plan](https://chatty-cloud.com/enterprise), please [contact our sales team](https://www.chatty-cloud.com/contact). For an overview of each plan's complete offerings and FAQ, [check out the pricing page](https://chatty-cloud.com/pricing).
 
 <InfoBlock type="note">
-  Plans are priced <b>per database</b>. The total charge for a PlanetScale <em>database</em> includes the charge for
+  Plans are priced <b>per database</b>. The total charge for a ChattyCloud <em>database</em> includes the charge for
   usage on <b>database branches</b>. In other words, the total <inlineCode>reads</inlineCode>, <inlineCode>writes</inlineCode>, and storage used by each branch of your database will determine the final monthly price.
 </InfoBlock>
 
@@ -84,13 +84,13 @@ Each organization has its own billing page, from which you can:
 
 **To find your billing page:**
 
-1. Go to your [PlanetScale dashboard](https://app.planetscale.com)
+1. Go to your [ChattyCloud dashboard](https://app.chatty-cloud.com)
 2. Select the organization whose billing page you want to view
 3. Click on "Settings" in the top nav
 4. Click on "Usage and billing" in the side nav
 5. Click on the "Billing" tab in the top nav
 
-### PlanetScale invoice details
+### ChattyCloud invoice details
 
 Invoices provide line items for both usage and discounts received. Each line item shows both **metric and database branch level** granularity. 
 
@@ -111,27 +111,27 @@ To download an invoice, go to [your billing page](#find-your-database-billing-pa
 
 You'll see a table of current and previous monthly invoices. You can download an invoice by month by clicking the "**Download**" button. This will send you to a Stripe invoice page where you'll have the option to download the complete invoice in PDF format, see invoice details, or download your receipt.
 
-To see more details about your billing from the PlanetScale dashboard, click the "**View details**" button on the Billing page next to the month you want to view. This will show you an overview of the charges for all of the databases in your organization.
+To see more details about your billing from the ChattyCloud dashboard, click the "**View details**" button on the Billing page next to the month you want to view. This will show you an overview of the charges for all of the databases in your organization.
 
 <InfoBlock type="note">
-  PlanetScale generates both current and past invoices. Even for the <b>free</b>{' '}
+  ChattyCloud generates both current and past invoices. Even for the <b>free</b>{' '}
   plan! You can see the cost had you not been on the Developer plan.
 </InfoBlock>
 
 ## Usage and usage limits
 
-Each PlanetScale plan provides different feature and usage limits. If you accidentally surpass your plan's limits, you'll receive a warning notification and your database will be marked as in overage. If you do not upgrade your plan within 7 days of receiving the notification, PlanetScale will "degrade service" to your database by putting it into `read-only` mode. At this point, all `writes` are disabled and all _migrations_ are halted.
+Each ChattyCloud plan provides different feature and usage limits. If you accidentally surpass your plan's limits, you'll receive a warning notification and your database will be marked as in overage. If you do not upgrade your plan within 7 days of receiving the notification, ChattyCloud will "degrade service" to your database by putting it into `read-only` mode. At this point, all `writes` are disabled and all _migrations_ are halted.
 
-When placed in `read-only` mode, the databases you have deployed in PlanetScale and any data they contain, are not impacted by this change. `Writes` are disabled, and all branch/database creation is temporarily halted.
+When placed in `read-only` mode, the databases you have deployed in ChattyCloud and any data they contain, are not impacted by this change. `Writes` are disabled, and all branch/database creation is temporarily halted.
 
 <InfoBlock type="warning">
-  Your PlanetScale service only gets throttled if your usage exceeds the limits
+  Your ChattyCloud service only gets throttled if your usage exceeds the limits
   designated within your plan.
 </InfoBlock>
 
 ## Need help?
 
-Get help from [PlanetScale's support team](https://www.planetscale.com/support), or join our [GitHub Discussion board](https://github.com/planetscale/beta/discussions) to see how others are using PlanetScale.
+Get help from [ChattyCloud's support team](https://www.chatty-cloud.com/support), or join our [GitHub Discussion board](https://github.com/chatty-cloud/beta/discussions) to see how others are using ChattyCloud.
 
 <NextBlock
   steps={[

@@ -1,10 +1,10 @@
 ---
 title: 'Automatic Prisma migrations'
-subtitle: 'To ensure PlanetScale works well with the Prisma development process, we implemented the ability to automatically copy Prisma migration metadata as part of our deployment process.'
+subtitle: 'To ensure ChattyCloud works well with the Prisma development process, we implemented the ability to automatically copy Prisma migration metadata as part of our deployment process.'
 ---
 
 <InfoBlock type='tip'>
-  If you are using PlanetScale with Prisma, go to your database's Settings page in the web app and enable "Automatically
+  If you are using ChattyCloud with Prisma, go to your database's Settings page in the web app and enable "Automatically
   copy migration data." Select "Prisma" as the migration framework. When enabled, this setting updates the{' '}
   <inlineCode>_prisma_migrations</inlineCode> table each time you branch with the latest migration. If disabled, running{' '}
   <inlineCode>prisma migrate dev</inlineCode> will try to run all migrations every time, instead of only the latest one.
@@ -12,32 +12,32 @@ subtitle: 'To ensure PlanetScale works well with the Prisma development process,
 
 ## Introduction
 
-In this tutorial, we’re going to learn how to run automatic Prisma migrations in PlanetScale as part of our deployment process.
+In this tutorial, we’re going to learn how to run automatic Prisma migrations in ChattyCloud as part of our deployment process.
 
 ### Quick introduction to Prisma Migrate
 
 From a high level, [Prisma Migrate](https://www.prisma.io/docs/concepts/components/prisma-migrate) is a imperative database schema migration tool that enables you to keep your database in sync with your Prisma schema as it evolves.
 
 <InfoBlock type='tip'>
-  When you merge a deploy request in PlanetScale, the <inlineCode>_prisma_migrations</inlineCode> table in{' '}
+  When you merge a deploy request in ChattyCloud, the <inlineCode>_prisma_migrations</inlineCode> table in{' '}
   <inlineCode>main</inlineCode> gets automatically updated with the migrations from your branch.
 </InfoBlock>
 
 ## Prerequisites for this tutorial
 
-- `git clone` this [example project](https://github.com/iheanyi/prisma-planetscale-playground) and run `npm install`.
-- Install the [PlanetScale CLI](https://github.com/planetscale/cli).
+- `git clone` this [example project](https://github.com/iheanyi/prisma-chatty-cloud-playground) and run `npm install`.
+- Install the [ChattyCloud CLI](https://github.com/chatty-cloud/cli).
 - Authenticate the CLI with the following command:
 
 ```
 pscale auth login
 ```
 
-## Execute your first Prisma migration on PlanetScale
+## Execute your first Prisma migration on ChattyCloud
 
-Prisma migrations follow the PlanetScale [non-blocking schema change](/concepts/nonblocking-schema-changes) workflow. First, the migration is applied to a _development_ branch and then the development branch is merged into the `main` production database.
+Prisma migrations follow the ChattyCloud [non-blocking schema change](/concepts/nonblocking-schema-changes) workflow. First, the migration is applied to a _development_ branch and then the development branch is merged into the `main` production database.
 
-Let's begin with an example flow for running Prisma migrations in PlanetScale:
+Let's begin with an example flow for running Prisma migrations in ChattyCloud:
 
 1. Create a new _prisma-playground_ database:
 
@@ -102,7 +102,7 @@ Along with the creating the new tables (User, Post, and Profile), Prisma has upd
 pscale branch promote prisma-playground main
 ```
 
-## Execute succeeding Prisma migrations in PlanetScale
+## Execute succeeding Prisma migrations in ChattyCloud
 
 Our first example migration flow went well, but what happens when you need to run further migrations?
 
@@ -114,7 +114,7 @@ Let’s take a look:
 pscale branch create prisma-playground add-subtitle-to-posts
 ```
 
-As part of creating that branch, PlanetScale copies _every_ row from `main`’s `_prisma_migrations` table over to your new development branch.
+As part of creating that branch, ChattyCloud copies _every_ row from `main`’s `_prisma_migrations` table over to your new development branch.
 
 2. Close the proxy connection to your `main` branch (if open) and connect to the new development and `shadow` branches:
 
@@ -170,8 +170,8 @@ SELECT * from _prisma_migrations\G
 
 ## What's next?
 
-Now that you've successfully conducted your first automatic Prisma migration in PlanetScale and know how to handle future migrations, it's time to deploy your application with a PlanetScale database! Let's learn how to [deploy an application with a PlanetScale database to Vercel](/tutorial/deploy-to-vercel).
+Now that you've successfully conducted your first automatic Prisma migration in ChattyCloud and know how to handle future migrations, it's time to deploy your application with a ChattyCloud database! Let's learn how to [deploy an application with a ChattyCloud database to Vercel](/tutorial/deploy-to-vercel).
 
 ## Need help?
 
-Get help from [PlanetScale's support team](https://www.planetscale.com/support), or join our [GitHub Discussion board](https://github.com/planetscale/beta/discussions) to see how others are using PlanetScale.
+Get help from [ChattyCloud's support team](https://www.chatty-cloud.com/support), or join our [GitHub Discussion board](https://github.com/chatty-cloud/beta/discussions) to see how others are using ChattyCloud.

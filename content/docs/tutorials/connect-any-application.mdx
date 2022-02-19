@@ -5,14 +5,14 @@ subtitle: ''
 
 ## Introduction
 
-In this tutorial, you'll learn how to connect any application to your PlanetScale database with either username and password or client certificates.
+In this tutorial, you'll learn how to connect any application to your ChattyCloud database with either username and password or client certificates.
 
 ## Prerequisites
 
-- The [PlanetScale CLI](https://github.com/planetscale/cli)
-- A [PlanetScale database](/tutorials/planetscale-quick-start-guide)
+- The [ChattyCloud CLI](https://github.com/chatty-cloud/cli)
+- A [ChattyCloud database](/tutorials/chatty-cloud-quick-start-guide)
 
-After you install the PlanetScale CLI, sign in with:
+After you install the ChattyCloud CLI, sign in with:
 
 ```
 pscale auth login
@@ -24,10 +24,10 @@ This section will show you how to create a username and password for your branch
 
 There are two ways to generate a new username and password for your branch:
 
-- In the PlanetScale dashboard
-- With the PlanetScale CLI
+- In the ChattyCloud dashboard
+- With the ChattyCloud CLI
 
-This section will cover creating credentials with the CLI, but if you'd prefer to do it in the PlanetScale dashboard, follow the instructions in the [Connection Strings documentation](/concepts/connection-strings#creating-a-password).
+This section will cover creating credentials with the CLI, but if you'd prefer to do it in the ChattyCloud dashboard, follow the instructions in the [Connection Strings documentation](/concepts/connection-strings#creating-a-password).
 
 Follow the instructions below to create a new username and password for your branch.
 
@@ -60,13 +60,13 @@ Please save the values below as they will not be shown again
    - **password:** The value for "PLAIN TEXT" in the above step
    - **database:** `<DATABASE_NAME>`
 
-4. Make sure you correctly configure TLS / SSL for your specific MySQL driver. See [Connecting to PlanetScale securely](/reference/planetscale-security) for more information.
+4. Make sure you correctly configure TLS / SSL for your specific MySQL driver. See [Connecting to ChattyCloud securely](/reference/chatty-cloud-security) for more information.
 
 ## Connect using client certificates
 
-Another way to connect your application to your PlanetScale database is using client certificates. You won't have to fiddle with configuring any certificates, as that's handled by PlanetScale. It's as simple as a single CLI command.
+Another way to connect your application to your ChattyCloud database is using client certificates. You won't have to fiddle with configuring any certificates, as that's handled by ChattyCloud. It's as simple as a single CLI command.
 
-You'll use the CLI to establish a secure connection to PlanetScale. It will listen on a local port that your application can connect to. This gets rid of the need to generate and remember multiple passwords every time you're creating or switching to a new branch.
+You'll use the CLI to establish a secure connection to ChattyCloud. It will listen on a local port that your application can connect to. This gets rid of the need to generate and remember multiple passwords every time you're creating or switching to a new branch.
 
 1. Run the following command in the CLI:
 
@@ -88,12 +88,12 @@ This establishes a secure connection and opens a port on your local machine that
 
 ## Further reading
 
-If you're interested in learning how to secure your application when connecting to PlanetScale, please read [Connecting to PlanetScale securely](/reference/planetscale-security).
+If you're interested in learning how to secure your application when connecting to ChattyCloud, please read [Connecting to ChattyCloud securely](/reference/chatty-cloud-security).
 
 ## What's next?
 
-Now that you've successfully connected your application to PlanetScale, it's time to make schema changes to your tables and deploy your application! Learn more about how PlanetScale allows you to make [non-blocking schema changes](/concepts/nonblocking-schema-changes) to your database tables, without locking or causing downtime for production databases.
+Now that you've successfully connected your application to ChattyCloud, it's time to make schema changes to your tables and deploy your application! Learn more about how ChattyCloud allows you to make [non-blocking schema changes](/concepts/nonblocking-schema-changes) to your database tables, without locking or causing downtime for production databases.
 
 ## Need help?
 
-Get help from [PlanetScale's support team](https://www.planetscale.com/support), or join our [GitHub Discussion board](https://github.com/planetscale/beta/discussions) to see how others are using PlanetScale.
+Get help from [ChattyCloud's support team](https://www.chatty-cloud.com/support), or join our [GitHub Discussion board](https://github.com/chatty-cloud/beta/discussions) to see how others are using ChattyCloud.

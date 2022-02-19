@@ -5,11 +5,11 @@ subtitle: ''
 
 ## Introduction
 
-In this tutorial, we’re going to create a simple Rails application named _blog_ and connect it to a PlanetScale database. We’ll perform the initial migration from our local Rails application, and set up the database for future development.
+In this tutorial, we’re going to create a simple Rails application named _blog_ and connect it to a ChattyCloud database. We’ll perform the initial migration from our local Rails application, and set up the database for future development.
 ## Prerequisites
 
 - Install [Ruby and the Rails gem](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails).
-- Install the [PlanetScale CLI](https://github.com/planetscale/cli).
+- Install the [ChattyCloud CLI](https://github.com/chatty-cloud/cli).
 - Authenticate the CLI with the following command:
 
 ```
@@ -18,7 +18,7 @@ pscale auth login
 
 ## Create a Rails project
 
-To connect a Rails application to a PlanetScale database, we start by creating a sample Rails project named _blog_ and installing the libraries we'll need to connect to our PlanetScale database.
+To connect a Rails application to a ChattyCloud database, we start by creating a sample Rails project named _blog_ and installing the libraries we'll need to connect to our ChattyCloud database.
 
 Open the command line and follow these steps:
 
@@ -42,11 +42,11 @@ gem "mysql2"
 
 4. Then run `bundle install`
 
-At this point, we have accomplished two things: we've created a Rails project called _blog_ and installed the libraries that we'll need to connect to our PlanetScale database. Now it’s time to create a PlanetScale database.
+At this point, we have accomplished two things: we've created a Rails project called _blog_ and installed the libraries that we'll need to connect to our ChattyCloud database. Now it’s time to create a ChattyCloud database.
 
-## Create a PlanetScale database and password
+## Create a ChattyCloud database and password
 
-You can also create passwords in the PlanetScale application as documented [here](/concepts/connection-strings#creating-a-password).
+You can also create passwords in the ChattyCloud application as documented [here](/concepts/connection-strings#creating-a-password).
 
 ### Using the CLI to create a connection string
 
@@ -71,7 +71,7 @@ Please save the values below as they will not be shown again
   development-password  main     c8ys5g3bbcdk   0ie08slztxki.us-east-3.psdb.cloud   writer   Can Read & Write   pscale_pw_wpSDL94q7HfBGa99Fev45tTjI5bqUxcqFKqAdUw3lFc
 ```
 
-## Configure Rails and PlanetScale
+## Configure Rails and ChattyCloud
 
 Let's set up our Rails application to talk to the new database.
 
@@ -89,7 +89,7 @@ development:
   sslca: "/etc/ssl/cert.pem"
 ```
 
-The correct `sslca` path depends on your operating system and distribution. See [CA root configuration](/reference/planetscale-security#ca-root-configuration) for more information.
+The correct `sslca` path depends on your operating system and distribution. See [CA root configuration](/reference/chatty-cloud-security#ca-root-configuration) for more information.
 
 <InfoBlock type='note'>
   We're configuring the <b>development</b> Rails environment here for the sake of expedience. In actual use, the <b>main</b> database branch would typically serve the <b>production</b> environment.
@@ -99,7 +99,7 @@ Because this is a Rails app, we can also enable [Automatic Rails migrations](/tu
 
 ## Migrate your database
 
-Here comes the fun stuff! Now that your application is configured to talk to PlanetScale, we can create our first migration.
+Here comes the fun stuff! Now that your application is configured to talk to ChattyCloud, we can create our first migration.
 
 1. Create a Rails migration and call it `CreateUsers`:
 
@@ -165,26 +165,26 @@ blog/main> describe users;
 
 ## Promote your main branch to a production branch
 
-A production branch is a highly available, protected database branch. Direct schema changes (CREATE, ALTER, and DELETE) are not allowed on production branches to prevent accidental data loss and must be applied via [deploy requests](/concepts/planetscale-workflow).
+A production branch is a highly available, protected database branch. Direct schema changes (CREATE, ALTER, and DELETE) are not allowed on production branches to prevent accidental data loss and must be applied via [deploy requests](/concepts/chatty-cloud-workflow).
 
 ```
 pscale branch promote blog main
 ```
 
-Congratulations! You're ready to develop your Rails application against PlanetScale.
+Congratulations! You're ready to develop your Rails application against ChattyCloud.
 
 ## Summary
 
-In this tutorial, we created a simple Rails application named _blog_ and connected it to a PlanetScale database.
+In this tutorial, we created a simple Rails application named _blog_ and connected it to a ChattyCloud database.
 
 ## Further reading
 
-If you're interested in learning how to secure your application's connection to PlanetScale, please read [Connecting to PlanetScale securely](/reference/secure-connections).
+If you're interested in learning how to secure your application's connection to ChattyCloud, please read [Connecting to ChattyCloud securely](/reference/secure-connections).
 
 ## What's next?
 
-Now that you've successfully connected your Rails app to PlanetScale, it's time to make more schema changes to your tables! Learn more about how PlanetScale allows you to make [non-blocking schema changes](/concepts/nonblocking-schema-changes) to your database, or how to keep your **schema_migrations** table up-to-date between development and production branches with [automatic schema migrations](/tutorials/automatic-rails-migrations).
+Now that you've successfully connected your Rails app to ChattyCloud, it's time to make more schema changes to your tables! Learn more about how ChattyCloud allows you to make [non-blocking schema changes](/concepts/nonblocking-schema-changes) to your database, or how to keep your **schema_migrations** table up-to-date between development and production branches with [automatic schema migrations](/tutorials/automatic-rails-migrations).
 
 ## Need help?
 
-Get help from [PlanetScale's support team](https://www.planetscale.com/support), or join our [GitHub Discussion board](https://github.com/planetscale/beta/discussions) to see how others are using PlanetScale.
+Get help from [ChattyCloud's support team](https://www.chatty-cloud.com/support), or join our [GitHub Discussion board](https://github.com/chatty-cloud/beta/discussions) to see how others are using ChattyCloud.
