@@ -9,10 +9,10 @@ export default function InfoBlock(props) {
   const bgColor = useColorModeValue('gray.200', 'gray.700');
 
   return (
-    <Box borderRadius={'lg'} p={3} bgColor={type === 'warning' ? bgWarningColor : bgColor} my={2}>
+    <Box borderRadius={'lg'} p={3} bgColor={type === 'warning' ? bgWarningColor : bgColor} my={2} fontSize={'sm'}>
       {type === 'note' && <strong>Note</strong>} {type === 'warning' && <strong>Warning</strong>}{' '}
       {type === 'tip' && <strong>Tip</strong>}
-      <div className='mt-1 info-block'>{children}</div>
+      <Box>{children}</Box>
     </Box>
   )
 }

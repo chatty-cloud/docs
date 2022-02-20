@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 export default function FeedbackBlock() {
   const pageURL = typeof window !== 'undefined' ? window.location.href : ''
   const [feedbackProvided, setFeedbackProvided] = useState(false)
-  const buttonBgColor = useColorModeValue('gray.80', 'gray.50')
+  const buttonBgColor = useColorModeValue('gray.800', 'gray.50')
 
   const feedbackValues = {
     PLUS: 1,

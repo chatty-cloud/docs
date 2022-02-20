@@ -1,20 +1,19 @@
-import { Box, ListItem, UnorderedList } from '@chakra-ui/react';
+import { Box, ListItem, UnorderedList, useColorModeValue } from '@chakra-ui/react';
 import React from 'react'
 
 export default function ListBlock(props) {
   const { children } = props
-
-  // console.log('nuno', Object.prototype.toString.call(children) === '[object Array]');
+  const pColor = useColorModeValue('gray.700', 'gray.300');
 
   return (
     <UnorderedList p={2}>
       {Object.prototype.toString.call(children) === '[object Array]' ? children.map((item, index) => {
         return (
 
-          <ListItem key={index}>{item.props.children}</ListItem>
+          <ListItem key={index} color={pColor} fontWeight={500} lineHeight={1.6} fontSize={'sm'}>{item.props.children}</ListItem>
         )
       }) : (
-        <ListItem>{children.props.children}</ListItem>
+        <ListItem color={pColor} fontWeight={500} lineHeight={1.6} fontSize={'sm'}>{children.props.children}</ListItem>
       )}
     </UnorderedList>
   )

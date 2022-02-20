@@ -10,44 +10,65 @@ function AnchorLink(props) {
 
   console.log('link nuno', children)
   return (
-    <LinkBox
-      // as={'span'}
-      fontSize='sm'
-      fontWeight={'bold'}
-      bgColor={'blue.100'}
-    >
-      {Object.prototype.toString.call(children) === '[object Array]' ? children.map((item, index) => {
-        return (
-          <Link href={'/'} passHref key={index}>
-            <LinkOverlay>
-              <Box borderRadius={'md'} p={2} bgColor={'blue.100'}>
-                <Text
-                  fontSize={'sm'}
-                  color={textColor}
-                >
-                  {item}
-                  {/* {item.props.children} */}
-                </Text>
-              </Box>
-            </LinkOverlay>
-          </Link>
-        )
-      }) : (
-        <Link href={'/'} passHref>
-          <LinkOverlay>
-            <Box borderRadius={'md'} p={2} bgColor={'blue.100'}>
-              <Text
-                fontSize={'sm'}
-                color={textColor}
-              >
-                {/* {children} */}
-                {children}
-              </Text>
-            </Box>
-          </LinkOverlay>
-        </Link>
-      )}
-    </LinkBox>
+    <Box as={'span'} fontSize={'sm'} color={'blue.300'}>
+      <a>{props.children}</a>
+      {/* <Link href={'/'}>{props.children}</Link> */}
+    </Box>
+    // <LinkBox
+    //   // as={'span'}
+    //   fontSize='sm'
+    //   fontWeight={'bold'}
+    //   bgColor={'blue.100'}
+    // >
+    //   {Object.prototype.toString.call(children) === '[object Array]' && children.map((item, index) => {
+    //     console.log('nuno', item);
+    //     return (
+    //       <Link href={'/'} passHref key={index}>
+    //         <LinkOverlay>
+    //           <Box borderRadius={'md'} p={2} bgColor={'blue.100'}>
+    //             <a>dfsdf</a>
+    //             <Text
+    //               fontSize={'sm'}
+    //               color={textColor}
+    //             >
+    //               {item}
+    //             </Text>
+    //           </Box>
+    //         </LinkOverlay>
+    //       </Link>
+    //     )
+    //   })}
+
+
+    //   {Object.prototype.toString.call(children) === 'object' && (
+    //     <Link href={'/'} passHref>
+    //       <LinkOverlay>
+    //         <Box borderRadius={'md'} p={2} bgColor={'blue.100'}>
+    //           <Text
+    //             fontSize={'sm'}
+    //             color={textColor}
+    //           >
+    //             {children.props.children}
+    //           </Text>
+    //         </Box>
+    //       </LinkOverlay>
+    //     </Link>
+    //   )}
+    //   {children === 'string' && (
+    //     <Link href={'/'} passHref>
+    //       <LinkOverlay>
+    //         <Box borderRadius={'md'} p={2} bgColor={'blue.100'}>
+    //           <Text
+    //             fontSize={'sm'}
+    //             color={textColor}
+    //           >
+    //             {children}
+    //           </Text>
+    //         </Box>
+    //       </LinkOverlay>
+    //     </Link>
+    //   )}
+    // </LinkBox >
   );
 }
 

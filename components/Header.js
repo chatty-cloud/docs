@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <Box
-      sx={{ position: 'sticky', top: '0' }}
+      // sx={{ position: 'sticky', top: '0' }}
       zIndex={40}
       w={'full'}
       py={4}

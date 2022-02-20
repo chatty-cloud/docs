@@ -42,7 +42,7 @@ export default function CodeBlock({ className, children }) {
               {tokens.map((line, i) => (
                 <Box key={i} {...getLineProps({ line, key: i })}>
                   {line.map((token, key) => (
-                    <Box as={'span'}
+                    <Box as={'span'} fontSize={'sm'}
                       key={key}
                       {...getTokenProps({ token, key })}
                     />

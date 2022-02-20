@@ -20,13 +20,15 @@ Chatty sdk를 정상적으로 사용하기 위해서는 아래 두가지가 필�
 
 file: App.js
 ```javascript
-import Chatty, { ChattyTypes } from 'chatty-cloud';
+import Chatty from 'chatty-cloud';
 
-...
+
+// When identifier of user is specific, call init function
+// Ex) 1. during application bootup process, 2. after new user join or login
 
 if (isLoggedIn) {
   await Chatty.init({
-    apiKey: <API KEY>, // API Key of your app that created in dashboard 
+    apiKey: <API KEY>,                // API Key of your app that created in dashboard 
     member: {
       id: <MEMBER ID>,                // mandatory  (ex: user.id)
       name: <MEMBER NAME>,            // mandatory  (ex: user.name)
