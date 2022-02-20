@@ -12,7 +12,7 @@ export default function Post({ frontmatter, body, fields }) {
       <TitleAndMetaTags
         title={frontmatter.title}
         description={frontmatter.subtitle ? frontmatter.subtitle : ''}
-        banner={frontmatter.banner ? frontmatter.banner : '/img/internals/social_share.png'}
+        banner={frontmatter.banner ? frontmatter.banner : '/index.png'}
         pathname={`${fields.slug}`}
       />
       <MDXContent

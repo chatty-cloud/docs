@@ -4,7 +4,6 @@
       "id": "getting-started",
       "name": "Getting Started",
       "description": "Explore key concepts of the ChattyCloud service",
-      "image": "/img/internals/category_concepts_light.png",
       "pages": [
         {
           "route": "introduction",

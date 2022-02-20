@@ -68,6 +68,10 @@ export function TitleAndMetaTags({ url, pathname, title, type, description, bann
       <meta name='twitter:description' content={description} />
 
       <script type='application/ld+json'>{JSON.stringify(schemaOrgJSONLD)}</script>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     </Head>
   )
 }
@@ -78,7 +82,7 @@ TitleAndMetaTags.defaultProps = {
   title: 'ChattyCloud - Serverless Database for Developers',
   type: 'website',
   description: 'Start small and grow to massive scale',
-  banner: 'img/internals/social_share.png',
+  banner: 'img/index.png',
   schemaOrgJSONLD: {
     '@context': 'http://schema.org',
     '@type': 'Organization',

@@ -6,8 +6,8 @@ const shadows = {
   outline: 'none'
 }
 const fonts = {
-  heading: "Roboto",
-  body: "Roboto"
+  heading: 'Montserrat',
+  body: 'Montserrat'
 }
 // const breakpoints = createBreakpoints({
 //   sm: "320px",
@@ -62,6 +62,7 @@ const components = {
 }
 
 const theme = extendTheme({
+  fonts,
   styles,
   letterSpacings,
   shadows,

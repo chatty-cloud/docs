@@ -32,6 +32,7 @@
     "react": "latest",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "latest",
+    "react-icons": "^4.3.1",
     "react-inlinesvg": "^2.3.0"
   }
 }

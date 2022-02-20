@@ -28,7 +28,7 @@ function Logo({ size, color, disabled }) {
       break;
   }
   return (
-    <Box py={2}>
+    <Box py={0}>
       <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" width={width} height={(110 * JSON.parse(width)) / 1024} viewBox="0 457 1024 110">
         <g>
           <g>
