@@ -56,7 +56,7 @@ export default function Navigation() {
 
   return (
     <Stack>
-      <Stack display={{ base: 'block', md: 'none' }}>
+      <Stack display={{ base: 'block', md: 'none' }} py={2}>
         <Button
           colorScheme="blue"
           bgColor={buttonBgColor}

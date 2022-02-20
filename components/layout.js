@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Spacer } from '@chakra-ui/react'
 import Header from '../components/Header'
 import Navigation from '../components/Navigation'
 
@@ -13,11 +13,16 @@ export default function Layout({ children }) {
           w={'full'}
           mx={'auto'}
           maxW={'7xl'}
-          px={8}
+          px={{ base: 4, md: 8 }}
           py={4}
         >
           <Flex flexDirection={{ base: 'column', md: 'row' }} h={'full'}>
-            <Box flexShrink={0} display={{ base: 'none', md: 'block' }} pr={{ base: 0, md: 12 }}>
+            <Box
+              // flexShrink={0}
+              display={{ base: 'none', md: 'block' }}
+              px={{ base: 0, md: 2 }}
+              mr={{ base: 0, md: 12 }}
+            >
               <Navigation />
             </Box>
             <Box flex={1} minW={0}>{children}</Box>

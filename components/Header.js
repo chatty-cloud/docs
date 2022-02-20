@@ -40,7 +40,7 @@ export default function Header() {
       bg={bgColor}
     >
 
-      <Flex flex={1} maxW={'7xl'} mx={'auto'} alignItems={'center'} justifyContent={'space-between'} px={6}>
+      <Flex flex={1} maxW={'7xl'} mx={'auto'} alignItems={'center'} justifyContent={'space-between'} px={{ base: 2, md: 6 }}>
         <Link href='/'>
           <a>
             <Logo size={'xs'} color={useColorModeValue('#111111', '#EFEFEF')} />
@@ -64,19 +64,19 @@ export default function Header() {
           </Button>
         </Box>
 
-        <Box display={{ base: 'block', md: 'none' }}>
+        <Box display={{ base: 'block', md: 'none' }} px={{ base: 2, md: 0 }}>
 
           <button
             aria-label='Open navigation menu'
             onClick={toggleMobileNav}
           >
-            {!showMobileNav ? <HamburgerIcon w={6} h={6} /> : <CloseIcon w={4} h={4} />}
+            {!showMobileNav ? <HamburgerIcon w={6} h={6} /> : <CloseIcon w={5} h={5} />}
 
             {/* <HamburgerMenu open={showMobileNav} /> */}
           </button>
         </Box>
       </Flex>
-      <Box zIndex={40} w={'full'} px={8} pt={3} display={{ base: showMobileNav ? 'block' : 'none', md: 'none' }}>
+      <Box zIndex={40} w={'full'} px={4} pt={3} display={{ base: showMobileNav ? 'block' : 'none', md: 'none' }}>
         <Navigation />
       </Box>
     </Box >
