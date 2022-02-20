@@ -70,34 +70,34 @@ export function TitleAndMetaTags({ url, pathname, title, type, description, bann
       <script type='application/ld+json'>{JSON.stringify(schemaOrgJSONLD)}</script>
 
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     </Head>
   )
 }
 
 TitleAndMetaTags.defaultProps = {
-  url: 'https://docs.chatty-cloud.com',
+  url: 'https://chatty-cloud.com',
   pathname: '',
-  title: 'ChattyCloud - Serverless Database for Developers',
+  title: 'ChattyCloud - Make your app chatty',
   type: 'website',
-  description: 'Start small and grow to massive scale',
+  description: 'Best solution to integrate chat service to your application',
   banner: 'img/index.png',
   schemaOrgJSONLD: {
-    '@context': 'http://schema.org',
+    '@context': 'https://chatty-cloud.com',
     '@type': 'Organization',
     name: 'ChattyCloud, Inc.',
-    url: 'https://docs.chatty-cloud.com',
+    url: 'https://chatty-cloud.com',
     sameAs: [
-      'https://twitter.com/'
+      'https://chatty-cloud.com/'
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '321 Castro St #200',
-      addressLocality: 'Mountain View',
-      addressRegion: 'CA',
-      postalCode: '94041',
-      addressCountry: 'US'
+      streetAddress: '25 Sinchon-ro',
+      addressLocality: 'Seodaemun-Gu',
+      addressRegion: 'Seoul',
+      postalCode: '14041',
+      addressCountry: 'Republic of Korea'
     }
   }
 }
