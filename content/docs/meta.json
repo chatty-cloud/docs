@@ -3,7 +3,7 @@
     {
       "id": "getting-started",
       "name": "Getting Started",
-      "description": "Explore key concepts of the ChattyCloud service",
+      "description": "Tutorial guide of the chatty sdk and cloud",
       "pages": [
         {
           "route": "introduction",
@@ -51,6 +51,18 @@
         {
           "route": "missed-badge-count",
           "display": "Missed badge count"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "name": "Reference",
+      "description": "References of ChattyCloud service",
+      "pages": [
+        {
+          "route": "error-code",
+          "display": "Error Code",
+          "desc": "API call Error response code and meaning"
         }
       ]
     }
