@@ -7,33 +7,35 @@ subtitle: 'Chatty Cloud is a chatting cloud service that provides backend as a s
 
 Developing a chat service using socket is not that easy. 
 there are various and complex user scenario in the frontend and developing a backend code needs an experienced software engineer
-They incurs a lot of development cost and time.
+These incurs a lot of development cost and time.
 
-채팅 서비스를 개발한다는 것은 쉬운일이 아니다. 프론트엔드 UI/Flow 뿐만아니라 서버측의 socket 개발도 필요하다. 그외 고려해야 할 여러가지 사항들이 있다. 이는 많은 시간과 개발비용을 초래한다.
-Chatty Cloud 는 React Native용 UI Components를 제공하며 이를통해 서버 개발없이 여러분의 서비스에 채팅기능을 아주 쉽게 통합할수 있습니다. 
+npm package `react-native-chatty-cloud` privides ui components and api to develop chat ui. 
+
+If you are experience react native using javascript or typescript, you can integrate and test to your exsiting app in several minutes
 
 
-
-예를 들어 여러분의 앱 사용자들이 상대 프로필에서 대화하기 버튼을 통해 둘만의 private한 대화를 한다는 사용자 시나리오를 가정해봅시다.
 
 
 
 ## Features
 
-Chatty Cloud에서 제공하는 주요 기능들은 아래와 같습니다:
+The followings are key features which Chatty Cloud provides
 
-- [`1-to-1 Chat`](/getting-started/1-to-1) &mdash; 1대1로 둘만의 채팅기능을 제공합니다
-- [`Listing Chats`](#database-administrator) &mdash; 내가 참여중인 채팅의 목록을 쉽게 불러오고 관리할수 있습니다
-- [`Group Chat`](#organization-administrator) &mdash; 최대 100명까지 참여할수 있는 Group chat을 이용할수 있으며 public/private으로 chat을 사용할수 있습니다.
-- [`Image Upload`](#organization-administrator) &mdash; 사진 파일을 동시에 4장까지 공유할수 있습니다. (서버에서의 최대 저장 기간은 6개월동안 저장됩니다)
-- [`Auto Translation`](#organization-administrator) &mdash; dashboard에서 자동번역을 활성화하면 Chat 안에서 서로 다른 언어사용자끼리 자동으로 번역해줍니다
-- [`Push Notifications`](#organization-administrator) &mdash; google firebase fcm 을 이용하여 android / ios 사용자 모두에게 push notification을 발생합니다.
-- [`Missed Badge Count`](#organization-administrator) &mdash; 앱내 채팅버튼에 Missed badge count를 표시할수 있습니다. 
-- [`Read Receipts`](#organization-administrator) &mdash; Chat내에서 read receipts를 확인할수 있습니다
+<InfoBlock type="note">
+  You can use all of these features with free until 10K messages
+</InfoBlock>
+
+- [`Peer to Peer Chat`](/getting-started/p2p) &mdash; Simply start a chat with peer member id
+- [`Listing Chats`](/getting-started/listing-chats) &mdash; Fetch and manage all of chats which member is joining 
+- [`Group Chat`](/getting-started/group-chat) &mdash; Group chat that allow to join until 100 member
+- [`Image Upload`](/getting-started/p2p) &mdash; Member can upload multiple image files (deleted after 6 months)
+- [`Auto Translation`](/getting-started/p2p) &mdash; If auto translation is enabled in dashboard, the messages of different language each other in chat are translated automatically
+- [`Push Notifications`](/getting-started/push-notifications) &mdash; Push notifications about chat messages are sent from cloud server using google firebase fcm, Just register firebase credential file in dashboard
+- [`Missed Badge Count`](/getting-started/p2p) &mdash; Fetching badge count number for missed message(unread) when entering app
+- [`Read Receipts`](/getting-started/p2p) &mdash; Read receipt in chat is shown automatically without code writing
 
 
 
-이 모든 기능을 10K 메시지 까지 무료로 사용할수 있습니다. 
 
 
 ## Assign organization roles to members
@@ -68,3 +70,12 @@ To assign a member the role of `Database Administrator`, follow the steps outlin
 ## Need help?
 
 Get help from [ChattyCloud's support team](https://www.chatty-cloud.com/support), or join our [GitHub Discussion board](https://github.com/chatty-cloud/beta/discussions) to see how others are using ChattyCloud.
+
+<NextBlock
+  steps={[
+    {
+      text: 'Installation',
+      link: '/getting-started/installation',
+    },
+  ]}
+></NextBlock>

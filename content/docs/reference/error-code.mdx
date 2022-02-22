@@ -1,65 +1,54 @@
 ---
 title: 'Error Codes'
-subtitle: ''
+subtitle: 'This page describes ChattyCloud exception and error codes'
 ---
 
-## Getting Started
+## Error Codes
 
-Make sure to first [set up your ChattyCloud developer environment](/reference/chatty-cloud-environment-setup). Once you've installed the `pscale` CLI, you'll be able to interact with ChattyCloud and manage your databases.
+ChattyCloud throws different kinds of errors. The following lists the exception types and error description
 
-![ChattyCloud CLI](/img/docs/pscale-cli_light.png)
 
-Ready to take these commands for a run on the terminal?
+### 1. Validation Errors
 
-## Available Commands
 
-Use `pscale [command] [command]` to start up the `pscale` CLI in your terminal.
 
-| **Command**      | **Subcommands/Options**                                      |
+| **Error**      | **Description**                                      |
 | ---------------- | ------------------------------------------------------------ |
-| `audit-log`      | List audit logs                                              |
-| `auth`           | Login, logout, refresh your authentication                   |
-| `backup`         | Create, read, destroy, and update branch backups             |
-| `branch`         | Create, delete, and manage branches                          |
-| `completion`     | Generate completion script for your shell                    |
-| `connect`        | Create a secure connection to the given database and branch  |
-| `database`       | Create, read, destroy, and update databases                  |
-| `deploy-request` | Create, approve, diff, and manage deploy requests            |
-| `help`           | Help about any command                                       |
-| `org`            | Modify and manage organization options                       |
-| `password`       | Create, list, and delete branch passwords                    |
-| `region`         | List regions                                                 |
-| `service-token`  | Create, get, and list service tokens                         |
-| `shell`          | Open a MySQL shell instance to the given database and branch |
-| `signup`         | Sign up for a new ChattyCloud account                        |
+| `E1001`          | Check function parameters are proper                              |
+| `E1002`          | Check type of files parameters exist or not |
+| `E1003`         | Image upload not supported. configure your app setting in chatty-cloud dashboard            |
+| `E1004`         | Video upload not supported. configure your app setting in chatty-cloud dashboard           |
+| `E1005`         | Upload file format not supported            |
+| `E1006`         | Maximum count of uploading files is 4. more than 4 is not allowed       |
+| `E2000`         | App Key is not valid. Please check apiKey param of Chatty.init function in your source code       |
+| `E2001`         | Check Chatty class was initialized      |
+| `E2002`         | Chat instance does not exist    |
+| `E2003`         | Member permission not allwed    |
+| `E2004`         | Member id does not match    |
+| `E2005`         | Chat id does not exist in payload    |
 
-## Flags
+### 2. API Errors
 
-You may use the following flags with the ChattyCloud CLI commands.
 
-| **Flag**                      | **Description**                                                                         |
+
+| **Error**      | **Description**                                      |
 | ----------------------------- | --------------------------------------------------------------------------------------- |
-| `--api-token string`          | The API token to use for authenticating against the ChattyCloud API                     |
-| `--config string`             | Config file _(default is $HOME/.config/chatty-cloud/pscale.yml)_                         |
-| `--debug`                     | Enable debug mode                                                                       |
-| `-f, --format string`         | Show output in specific format. Possible values: _[human, json, csv] (default "human")_ |
-| `-h, --help`                  | Get more information about a command                                                    |
-| `--no-color`                  | Disable color output                                                                    |
-| `--service-token string`      | Service Token for authenticating                                                        |
-| `--service-token-name string` | The Service Token name for authenticating                                               |
-| `--version`                   | Show pscale version. Verify that you're using the latest version                        |
+| `E30001`          | Exception response of api from chatty cloud server                   |
+| `E30002`             | Exception response of file upload api                   |
 
-## Service tokens in organizations
+### 3. Socket Errors
 
-To add **service tokens** for your organization, here's a complete list of access permissions that can be granted to a token:
 
-| **Token Access Permissions**                                                                 | **What they control**                                       |
+| **Error**      | **Description**                                      |
 | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| `read_branch` <br/><br/> `delete_branch` <br/><br/> `create_branch`                          | CRUD on _Branches_ of a `Database`                          |
-| `connect_branch`                                                                             | Connect to **development** _Branches_ of a `Database`       |
-| `connect_production_branch`                                                                  | Connect to **production** _Branches_ of a `Database`        |
-| `read_deploy_request` <br/><br/> `create_deploy_request` <br/><br/> `approve_deploy_request` | _Deploy Requests_ on _Branches_ of a `Database`             |
-| `read_comment` <br/><br/> `create_comment`                                                   | Comments of _Deploy Requests_ on _Branches_ of a `Database` |
+| `E4001`                          | Check chatlist instance was created or not                         |
+| `E4002`                          | Check chat instance was created or not                         |
+| `E4003`                          | Check chatlist socket connection                  |
+| `E4004`                          | Check chat socket connection                    |
+| `E4005`                          | Check chatlist handler is not initialized                      |
+| `E4006`                          | Check chat handler is not initialized                       |
+| `E4007`                          | ChatConnectOptions should have one of 'at' or 'with'                     |
+| `E4008`                          | When connect with 'with' options, minimum two MemberId are need                       |
 
 ## Need help?
 

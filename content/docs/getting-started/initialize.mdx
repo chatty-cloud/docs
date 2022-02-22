@@ -12,18 +12,15 @@ To use sdk properly, need to initialize two things as below
 
 
 ## Where to initialize
-- during application booting up
-- after signin or login
+- Place where can specify the user identification during application booting up
+- And after member signin or login
 
 
 <InfoBlock type="note">
-  even init function is called multiple time, only unique member exist
-
+- Even if init function is called multiple time, the member is not registered as a duplicate (member is always unique)
+- If member signout and signin again, the member id should be different with previous member id. especially, in case of third party oauth login, don't use provider's id as member id
 </InfoBlock>
 
-### 특징
-- 중복으로 호출이 되어도 member를 중복으로 생성하지않습니다. member는 id 값으로 유일하게 존재합니다
-- 멤버가 당신의 서비스에서 탈퇴후 재가입시 id값은 달라져있어야 합니다.(social login 과 같은 경우를 사용할경우 provider's user id값을 사용하지 마세요)
 
 
 file: App.js
@@ -55,35 +52,6 @@ if (isLoggedIn) {
 
 
 
-
-## Email address and password
-
-This is the only authentication mechanism where ChattyCloud maintains user credentials.
-
-Additionally, users can opt to configure [two-factor authentication (2FA)](/concepts/mfa). This option requires **something you know** _(i.e. your password)_ and **something you have** _(i.e. recovery codes)_.
-
-## Single sign-on
-
-Users can authenticate with their chosen corporate identity provider _(i.e. Okta)_ instead of maintaining passwords with ChattyCloud.
-
-Once [SSO](/concepts/sso) is enabled for an `organization`, all members are redirected through that identity provider's authentication flow. Moving forward, they must pass through SSO to access their ChattyCloud account.
-
-## OAuth via GitHub
-
-Users can authenticate with ChattyCloud using their GitHub account.
-
-<InfoBlock type="warning">
-  ChattyCloud doesn't maintain the passwords for these accounts. Losing access
-  to your GitHub account prevents accessing your ChattyCloud account.
-</InfoBlock>
-
-
-<InfoBlock type="note">
-  Enabling SSO removes OAuth access for all members of your{' '}
-  <em>organization</em>, meaning they will no longer be able to sign in with
-  their GitHub credentials.
-</InfoBlock>
-
 ## Need help?
 
 Get help from [ChattyCloud's support team](https://www.chatty-cloud.com/support), or join our [GitHub Discussion board](https://github.com/chatty-cloud/beta/discussions) to see how others are using ChattyCloud.
@@ -91,8 +59,8 @@ Get help from [ChattyCloud's support team](https://www.chatty-cloud.com/support)
 <NextBlock
   steps={[
     {
-      text: 'Multi-factor authentication',
-      link: '/concepts/mfa',
+      text: 'Peer to Peer Chat',
+      link: '/getting-started/p2p',
     },
   ]}
 ></NextBlock>

@@ -21,12 +21,12 @@
           "desc": "bootup과정에서 chat.init을 사용하는 방법 가이드, 소스"
         },
         {
-          "route": "1-to-1",
-          "display": "1-to-1 chat",
+          "route": "p2p",
+          "display": "Peer to Peer Chat",
           "desc": "대화상대를 지정하여 chat room을 만들고 채팅하는 방법에 대한 소개"
         },
         {
-          "route": "listing-chat",
+          "route": "listing-chats",
           "display": "Listing chats",
           "desc": "내가 참여한 채팅의 목록을 불러오는 방법"
         },
@@ -38,7 +38,7 @@
         {
           "route": "group-chat",
           "display": "Group chat",
-          "desc": "3명이상이 참여하는 group chat을 만드는 방법과 1-to-1과 어떻게 다른지 "
+          "desc": "3명이상이 참여하는 group chat을 만드는 방법과 peer to peer와 어떻게 다른지 "
         },
         {
           "route": "image-upload",
