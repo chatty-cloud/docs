@@ -15,8 +15,7 @@ import TableBlock from './MDX.TableBlock'
 import ListBlock from './MDX.ListBlock'
 import PageInfo from './PageInfo'
 import { Box, Text, useColorModeValue } from '@chakra-ui/react'
-// import AnchorLink from './MDX.AnchorLink'
-import Link from 'next/link'
+
 
 export default function MDXContent({ title, subtitle, banner, body, lastUpdatedOn, slug, category }) {
   const pColor = useColorModeValue('gray.700', 'gray.300');
@@ -28,7 +27,6 @@ export default function MDXContent({ title, subtitle, banner, body, lastUpdatedO
     h2: (props) => <HeadingBlock {...props} heading='h2' category={category} />,
     h3: (props) => <HeadingBlock {...props} heading='h3' category={category} />,
     ul: (props) => <ListBlock {...props} />,
-    // a: (props) => <AnchorLink {...props} />,
     p: (props) => <Text color={pColor} fontWeight={500} lineHeight={1.6} fontSize={'sm'}>{props.children}</Text>,
     NextBlock,
     InfoBlock

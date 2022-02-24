@@ -8,9 +8,7 @@ export default function ImageBlock(props) {
   return (
     <Box>
       <img src={imageURL} alt={alt} className='max-h-[600px] mx-auto'></img>
-      {alt && <span className='block mt-1 mb-4 text-sm text-center text-secondary'>{alt}</span>}
+      {alt && <Box>{alt}</Box>}
     </Box>
-    // <span className='block mt-3'>
-    // </span>
   )
 }

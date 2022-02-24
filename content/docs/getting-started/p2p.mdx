@@ -3,42 +3,26 @@ title: 'Peer to Peer Chat'
 subtitle: 'How to start chat with peer member id'
 ---
 
-## User scenario
+## Chatty Component
 
 Let's assume that user want to chat with touching chat icon button at other person's profile screen.
+
 If init function is completed with success each other, both of them are ready to join chat.
-Then like as below, navigate to following screen with peer member id.
+
+Then like as below, navigate to following Chat screen with 'with' param that indicates peer member id.
+
 
 ```javascript
 // Chat.js file that you generated
 
 import Chatty from 'react-native-chatty-cloud';
 
-interface ChatProps {
-  at: string,
-  with: string,
-}
-
-const Chat = (props: ChatProps) => {
-  const user = useUser();
+const Chat = (props) => {
   return (
     <Chatty
-      at={props.route.params.at}
-      with={props.route.params.with}
-      distinctKey=''
-      group=''
-
-      headerBg={'white'}
-      headerLeftOnPress={() => props.navigation.goBack()}
-
-      footerBg={'white'}
-      rightBubbleColor={'green'}
-    // TextInput Area
-    // textInputPlaceholder='Enter Message'
-    // attachIcon={<AddIcon />}
-    // sendIcon={<ArrowForwardIcon />}
+      with={props.route.params.with}                          // assign peer member id which want to chat with to 'with' param
+      headerLeftOnPress={() => props.navigation.goBack()}     // register callback function for returning back to previous screen 
     />
-
   );
 };
 
@@ -46,21 +30,32 @@ export default Chat;
 
 
 ```
-Chatty가 init이 완료되면 member의 id와 이름이 chatty cloud에 등록이되며 채팅멤버로서 chat에 참여할수 있는 조건이 됩니다.
-채팅방으로 들어가는 방법은 아래와 같습니다. 
-- 상대의 member id를 가지고 둘만의 private chat 을 만드는방법
-- chat list에서 하나의 chat을 선택해서 chat으로 진입
-- createChat 함수를 이용하여 chat 생성
 
-<InfoBlock type="note">
-  Daily backups of database branches are included free of charge for all databases. Our <a href="https://docs.chatty-cloud.com/concepts/billing#chatty-cloud-plans">Scaler plan</a> includes automated backups every 12 hours.
-</InfoBlock>
+Congratulations!  Now you can send messages and receive mesages with chatty default ui components
+Is it's design not satisfied with you? Don't worry about it. You can customize it fully.
+First of all, look into available parameter list of Chatty React native element.
 
-## View backups
 
-To view backups for either `main` or your _development_ branches, go to your branch backups page: `app.chatty-cloud.com/<org>/<database>/<branch>/backups`.
+## Chatty Props
 
-Once there, you'll find additional details about your backup history.
+### with
+the peer member id to want to chat
+- Type: string
+- Default: undefined
+
+### at
+chat id to enter existing chat
+- Type: string
+- Default: undefined
+
+## Chatty Callback
+
+### headerLeftOnPress
+onPress callback of left component in Chatty Header
+- Type: string
+- Default: undefined
+
+
 
 
 ## Need help?

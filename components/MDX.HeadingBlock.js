@@ -8,7 +8,7 @@ function HeadingBlock(props) {
   const { children, heading, category } = props
 
   return (
-    <Box mt={heading === 'h2' ? 14 : 8} mb={4} py={2} borderBottomWidth={heading === 'h2' ? 1 : 0} borderBottomColor={borderColor}>
+    <Box mt={heading === 'h2' ? 14 : 8} mb={heading === 'h2' ? 4 : 2} py={2} borderBottomWidth={heading === 'h2' ? 1 : 0} borderBottomColor={borderColor}>
       <Heading size={heading === 'h2' ? 'md' : 'sm'}>{children}</Heading>
     </Box>
   );
