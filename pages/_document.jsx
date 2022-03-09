@@ -37,7 +37,7 @@ export default class Document extends NextDocument {
           <script dangerouslySetInnerHTML={{ __html: this.renderSnippet() }} />
         </Head>
         <body>
-          {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>

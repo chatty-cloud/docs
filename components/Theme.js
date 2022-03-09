@@ -50,7 +50,8 @@ const styles = {
 
 const config = {
   initialColorMode: 'dark',
-  useSystemColorMode: true,
+  // initialColorMode: localStorage.getItem('theme'),
+  useSystemColorMode: false,
 }
 
 const components = {
@@ -62,12 +63,12 @@ const components = {
 }
 
 const theme = extendTheme({
+  config,
   fonts,
   styles,
   letterSpacings,
   shadows,
   colors,
-  config,
   components
 });
 

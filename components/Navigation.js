@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useTheme } from 'next-themes'
+// import { useTheme } from 'next-themes'
 
 import meta from '../content/docs/meta.json'
 import LabelSelect from './LabelSelect'
@@ -10,8 +10,11 @@ import { useRouter } from 'next/router'
 import SearchBar from './Searchbar'
 
 export default function Navigation() {
-  const { theme, setTheme } = useTheme()
+  // const { theme, setTheme } = useTheme()
+  const { colorMode, toggleColorMode } = useColorMode();
   const buttonBgColor = useColorModeValue('gray.80', 'gray.50');
+  const textColor = useColorModeValue('gray.600', 'gray.400');
+  const selectedTextColor = useColorModeValue('gray.700', 'gray.300');
   const switchMode = (event) => {
     setTheme(event.target.value);
     console.log('colormode ', event.target.value);
@@ -39,7 +42,7 @@ export default function Navigation() {
                   <Box bgColor={router.query.post === page['route'] ? bgColor : undefined} borderRadius={'md'} p={2}>
                     <Text
                       fontSize={'sm'}
-                      color={router.query.post === page['route'] ? 'gray.100' : 'gray.400'}
+                      color={router.query.post === page['route'] ? selectedTextColor : textColor}
                     >
                       {page['display']}
                     </Text>
@@ -70,18 +73,19 @@ export default function Navigation() {
       </Stack>
 
       <Stack>
-        <LabelSelect label='SDK' value={theme} size='small' className='block' onChange={switchMode}>
+        <LabelSelect label='SDK' value={'react-native'} size='xs' onChange={(e) => null}>
           <option value='react-native'>React Native</option>
           <option value='flutter'>Flutter</option>
         </LabelSelect>
-        <LabelSelect label='Version' value={theme} size='small' className='block' onChange={switchMode}>
+        <LabelSelect label='Version' value={'1.1'} size='xs' onChange={(e) => null}>
           <option value='1.1'>1.1</option>
           <option value='1.0'>1.0</option>
         </LabelSelect>
-        <LabelSelect label='Theme' value={theme} size='small' className='block' onChange={switchMode}>
+        {/* <LabelSelect label='Theme' value={theme} size='xs' onChange={(e) => setTheme(e.target.value)}> */}
+        <LabelSelect label='Theme' value={colorMode} size='xs' onChange={toggleColorMode}>
           <option value='light'>Light</option>
           <option value='dark'>Dark</option>
-          <option value='system'>System</option>
+          {/* <option value='system'>System</option> */}
         </LabelSelect>
       </Stack>
 
